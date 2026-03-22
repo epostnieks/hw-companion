@@ -81,7 +81,6 @@ const TABS = [
   { id: "calvano", label: "Calvano Q-Learning" },
   { id: "conflictoring", label: "Conflictoring" },
   { id: "sapm", label: "SAPM Summary" },
-  { id: "errata", label: "Errata" },
 ];
 
 export default function HWCompanion() {
@@ -247,27 +246,6 @@ export default function HWCompanion() {
           </div>
         )}
 
-        {tab === "errata" && (
-          <div>
-            <Section number="⚠" title="Errata & Corrections" subtitle="Applied in v3.5 (March 22, 2026)" />
-            {[
-              { sev: "FIXED", title: "LIBOR Act citation", detail: "Was: Pub. L. 117-169 (Inflation Reduction Act). Now: Pub. L. 117-103, div. U." },
-              { sev: "FIXED", title: "T* variable definitions in §5.2", detail: "Was: δ = 'system sensitivity', λ = 'agent's discount rate'. Now: δ = 'net private surplus', λ = 'system welfare loss rate per period'." },
-              { sev: "FIXED", title: "β_W range attribution", detail: "Was: '0.8 to 5.5 (LIBOR manipulation)'. Now: '0.8 to 6.8 (VW Dieselgate)'. LIBOR β_W is effectively unbounded." },
-              { sev: "FIXED", title: "VW β_W", detail: "Was: 5.5. Now: 6.8. Computed from quadratic PSF: β_W = 2λ/δ_annual = 2 × $2.1B / $617M." },
-              { sev: "FIXED", title: "VW T*", detail: "Was: 6.1 years. Now: 5.9 years. T* = $3.7B / (0.3 × $2.1B)." },
-              { sev: "FIXED", title: "Version number", detail: "Header updated from v3.3 to v3.5 to match filename." },
-            ].map((e, i) => (
-              <Card key={i}>
-                <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 8 }}>
-                  <span style={{ fontFamily: FONTS.mono, fontSize: 9, padding: "2px 6px", borderRadius: 2, background: "rgba(5,150,105,0.15)", color: GREEN }}>{e.sev}</span>
-                  <span style={{ fontFamily: FONTS.mono, fontSize: 11, color: "rgba(255,255,255,0.8)" }}>{e.title}</span>
-                </div>
-                <div style={{ fontFamily: FONTS.mono, fontSize: 11, color: MUTED, lineHeight: 1.7 }}>{e.detail}</div>
-              </Card>
-            ))}
-          </div>
-        )}
       </main>
 
       <footer style={{ borderTop: `1px solid ${BORDER}`, padding: "20px 0", textAlign: "center" }}>
