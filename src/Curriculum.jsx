@@ -3,7 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip as RTooltip, ResponsiveContainer, 
 
 // ══════════════════════════════════════════════════════════════
 // SAPM Curriculum — 8 Chapters
-// Postnieks Impossibility Program
+// Erik Postnieks © 2026
 // Palette matched to c-adjusted-gdp.vercel.app
 // ══════════════════════════════════════════════════════════════
 
