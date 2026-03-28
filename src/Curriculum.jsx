@@ -797,6 +797,91 @@ function Chapter7() {
         </div>
       </div>
 
+      {/* OBJECTION CARD */}
+      <div style={{ padding: "24px", background: "rgba(239,68,68,0.04)", border: `2px solid rgba(239,68,68,0.2)`, borderRadius: 4, margin: "24px 0" }}>
+        <div style={{ fontFamily: M, fontSize: 13, fontWeight: 700, color: RED, letterSpacing: 1, marginBottom: 12 }}>
+          'I AM ALREADY INSIDE THE FRAUD. IT IS TOO LATE.'
+        </div>
+        <div style={{ fontFamily: S, fontSize: 14, color: DIM, lineHeight: 1.8 }}>
+          This is the most common reason people inside a Hollow Win do not come forward. It is factually wrong. The most important whistleblower case in US history was brought by a man who was not a bystander. He was a participant.
+        </div>
+      </div>
+
+      {/* THE BIRKENFELD CASE */}
+      <div style={{ padding: "28px", background: SURFACE, border: `2px solid rgba(245,158,11,0.3)`, borderRadius: 4, margin: "24px 0" }}>
+        <div style={{ fontFamily: M, fontSize: 10, color: GOLD, letterSpacing: 2, marginBottom: 16 }}>THE BIRKENFELD CASE</div>
+
+        <div style={{ fontFamily: M, fontSize: 14, fontWeight: 600, color: TEXT, marginBottom: 4 }}>Bradley Birkenfeld</div>
+        <div style={{ fontFamily: S, fontSize: 14, color: DIM, lineHeight: 1.8, marginBottom: 20 }}>
+          UBS private banker. He personally helped wealthy American clients hide assets in secret Swiss accounts. He was not an observer. He was inside the fraud.
+        </div>
+
+        <Label>WHAT HE DID</Label>
+        <div style={{ fontFamily: S, fontSize: 14, color: DIM, lineHeight: 1.8, marginBottom: 20 }}>
+          In 2007, after UBS failed to address the illegal activity internally, he brought comprehensive documentation to the DOJ, IRS, and Senate Permanent Subcommittee on Investigations.
+        </div>
+
+        <Label>WHAT HAPPENED TO HIM</Label>
+        <div style={{ fontFamily: M, fontSize: 12, color: DIM, lineHeight: 2.2, marginBottom: 20 }}>
+          Pleaded guilty to conspiracy to defraud the United States<br/>
+          Sentenced to 40 months in prison<br/>
+          Served <span style={{ color: GOLD, fontWeight: 600 }}>31 months</span> at Schuylkill County Federal Correctional Institution<br/>
+          Fine: $30,000
+        </div>
+
+        <Label>WHAT HAPPENED FIVE WEEKS AFTER HIS RELEASE</Label>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", margin: "16px 0 24px", padding: "20px", background: "rgba(245,158,11,0.06)", borderRadius: 4 }}>
+          <div style={{ fontFamily: M, fontSize: 11, color: MUTED, marginBottom: 8 }}>IRS §7623 WHISTLEBLOWER AWARD</div>
+          <div style={{ fontFamily: M, fontSize: 42, color: GOLD, fontWeight: 700 }}>$104,000,000</div>
+          <div style={{ height: 1, background: BORDER, width: "60%", margin: "16px 0" }} />
+          <div style={{ fontFamily: M, fontSize: 48, color: GOLD, fontWeight: 700 }}>$115,556</div>
+          <div style={{ fontFamily: M, fontSize: 12, color: MUTED, marginTop: 4 }}>FOR EVERY SINGLE DAY HE SPENT IN PRISON</div>
+        </div>
+
+        <Label>WHAT HIS DISCLOSURES TRIGGERED</Label>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, margin: "12px 0 20px" }}>
+          <div style={{ textAlign: "center", padding: "12px", background: "rgba(245,158,11,0.04)", borderRadius: 4 }}>
+            <div style={{ fontFamily: M, fontSize: 24, color: GOLD, fontWeight: 600 }}>$780M</div>
+            <div style={{ fontFamily: M, fontSize: 10, color: MUTED }}>UBS FINE</div>
+          </div>
+          <div style={{ textAlign: "center", padding: "12px", background: "rgba(245,158,11,0.04)", borderRadius: 4 }}>
+            <div style={{ fontFamily: M, fontSize: 24, color: GOLD, fontWeight: 600 }}>120+</div>
+            <div style={{ fontFamily: M, fontSize: 10, color: MUTED }}>CRIMINAL INDICTMENTS</div>
+          </div>
+          <div style={{ textAlign: "center", padding: "12px", background: "rgba(245,158,11,0.04)", borderRadius: 4 }}>
+            <div style={{ fontFamily: M, fontSize: 24, color: GOLD, fontWeight: 600 }}>56,000+</div>
+            <div style={{ fontFamily: M, fontSize: 10, color: MUTED }}>DELINQUENT TAXPAYERS CAME FORWARD</div>
+          </div>
+          <div style={{ textAlign: "center", padding: "12px", background: "rgba(245,158,11,0.04)", borderRadius: 4 }}>
+            <div style={{ fontFamily: M, fontSize: 24, color: GOLD, fontWeight: 600 }}>$11B+</div>
+            <div style={{ fontFamily: M, fontSize: 10, color: MUTED }}>US TAX COLLECTIONS FROM HIS DISCLOSURE</div>
+          </div>
+        </div>
+
+        <Label>THE LEGAL PRECEDENT</Label>
+        <div style={{ fontFamily: S, fontSize: 14, color: DIM, lineHeight: 1.8, marginBottom: 20 }}>
+          Participants in a fraud — not just observers — are eligible for IRS whistleblower awards. The IRS did not reduce his award for his participation in the wrongdoing. The government stated explicitly: they needed a knowledgeable insider. Only insiders have the information that matters.
+        </div>
+
+        <div style={{ padding: "20px", background: "rgba(239,68,68,0.04)", border: `1px solid rgba(239,68,68,0.15)`, borderRadius: 4 }}>
+          <Label>THE INJUSTICE THAT MAKES IT REAL</Label>
+          <div style={{ fontFamily: S, fontSize: 15, color: TEXT, lineHeight: 1.9, marginTop: 8 }}>
+            Of all UBS executives implicated or indicted — including Birkenfeld's direct superiors — he was the only one who served prison time. The people above him paid fines and walked. He blew the whistle and went to prison. Then received $104 million.
+          </div>
+          <div style={{ fontFamily: S, fontSize: 15, color: GOLD, lineHeight: 1.9, marginTop: 12, fontWeight: 600 }}>
+            The system is imperfect. The math still works.
+          </div>
+        </div>
+      </div>
+
+      {/* IMPORTANT DISTINCTIONS */}
+      <div style={{ padding: "16px 20px", background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: 4, margin: "0 0 24px" }}>
+        <div style={{ fontFamily: M, fontSize: 10, color: MUTED, letterSpacing: 1, marginBottom: 8 }}>IMPORTANT DISTINCTION</div>
+        <div style={{ fontFamily: S, fontSize: 13, color: DIM, lineHeight: 1.8 }}>
+          Birkenfeld used the IRS §7623 program (tax fraud). LIBOR traders would use SEC §21F or CFTC §748 (financial benchmark manipulation). Different programs. Same architecture: 10–30% of sanctions, participants eligible, no maximum award. The Birkenfeld case is the proof of concept.
+        </div>
+      </div>
+
       {/* FOUR FEDERAL PROGRAMS */}
       <div style={{ fontFamily: M, fontSize: 10, color: GOLD, letterSpacing: 1, margin: "24px 0 12px" }}>THE FOUR FEDERAL PROGRAMS</div>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
