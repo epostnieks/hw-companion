@@ -21,7 +21,7 @@ const DIM = "rgba(255,255,255,0.55)";
 
 // ─── TOOLTIP ─────────────────────────────────────────────────
 const GLOSSARY = {
-  "β_W": "System welfare beta — the marginal rate of system welfare destruction per dollar of private gain. β_W = −dW/dΠ.",
+  "βW": "System welfare beta — the marginal rate of system welfare destruction per dollar of private gain. βW = −dW/dΠ.",
   "PST": "Private-Systemic Tension — the three axioms (overlapping interests, system independence, system dependence) under which the impossibility holds.",
   "T*": "Crossover time — the predicted time until a Hollow Win collapses into outright failure. T* = δ/(ηλ).",
   "W": "System welfare — an independent variable measuring the health of the shared system (market, commons, benchmark, ecosystem). W cannot be computed from bilateral payoffs.",
@@ -388,8 +388,8 @@ const CAPM_SAPM = [
   ["Full name", "Capital Asset Pricing Model", "System Asset Pricing Model"],
   ["Developed", "Sharpe, Lintner, Mossin (1964)", "Postnieks (2026)"],
   ["Measures", "Market risk", "Welfare risk"],
-  ["Key variable", "β (market beta)", "β_W (welfare beta)"],
-  ["Formula", "β = Cov(r,r_m)/Var(r_m)", "β_W = −dW/dΠ"],
+  ["Key variable", "β (market beta)", <>β<sub>W</sub> (welfare beta)</>],
+  ["Formula", <>β = Cov(r,r<sub>m</sub>)/Var(r<sub>m</sub>)</>, <>β<sub>W</sub> = −dW/dΠ</>],
   ["What it says", "How much this asset moves with the market", "How much social welfare this sector destroys per dollar of private gain"],
   ["High value means", "High market risk", "High welfare destruction per dollar"],
   ["Used for", "Portfolio construction, cost of capital", "Policy design, regulatory intervention, negotiation diagnosis"],
@@ -575,9 +575,9 @@ function Chapter5() {
     <div id="ch5">
       <ChapterHead num={5} title="Every dollar of apparent output has a welfare cost. Here is what it costs." subtitle="The System Asset Pricing Model calibrates welfare betas for 32 sectors. The results are not subtle." time="4 min" />
 
-      <P>Welfare beta (<Tip term="β_W">β_W</Tip>) measures the marginal rate of system welfare destruction per dollar of private gain. A sector with β_W = 1.0 destroys one dollar of social welfare for every dollar of revenue. A sector with β_W = 35.2 destroys thirty-five.</P>
+      <P>Welfare beta (<Tip term="βW">β<sub>W</sub></Tip>) measures the marginal rate of system welfare destruction per dollar of private gain. A sector with β<sub>W</sub> = 1.0 destroys one dollar of social welfare for every dollar of revenue. A sector with β<sub>W</sub> = 35.2 destroys thirty-five.</P>
 
-      <div style={{ fontFamily: M, fontSize: 12, color: GOLD, letterSpacing: 1, margin: "24px 0 12px" }}>β_W RANKINGS</div>
+      <div style={{ fontFamily: M, fontSize: 12, color: GOLD, letterSpacing: 1, margin: "24px 0 12px" }}>β<sub>W</sub> RANKINGS</div>
       <div style={{ height: 680 }}>
         <ResponsiveContainer>
           <BarChart data={BETA_CHART_DATA} layout="vertical" margin={{ left: 160, right: 30, top: 5, bottom: 5 }}>
@@ -586,7 +586,7 @@ function Chapter5() {
             <YAxis type="category" dataKey="domain" tick={{ fill: DIM, fontFamily: M, fontSize: 11 }} width={150} interval={0} />
             <RTooltip
               contentStyle={{ background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: 4, fontFamily: M, fontSize: 13, color: DIM, maxWidth: 320 }}
-              formatter={(val, name, props) => [props.payload.tip, `β_W = ${val}`]}
+              formatter={(val, name, props) => [props.payload.tip, `βW = ${val}`]}
             />
             <Bar dataKey="beta" radius={[0, 3, 3, 0]}>
               {BETA_CHART_DATA.map((d, i) => (
@@ -671,7 +671,7 @@ function Chapter6() {
             ["Party A payoff", "847 utils ✓", GREEN],
             ["Party B payoff", "823 utils ✓", GREEN],
             ["System welfare (W)", "-$4.7M ⚠", GOLD],
-            ["β_W (this domain)", "6.2 ⚠", GOLD],
+            [<>β<sub>W</sub> (this domain)</>, "6.2 ⚠", GOLD],
             ["System-adjusted payoff", "-$2.4M ✗", RED],
             ["T* (crossover time)", "4.2 years ⚠", GOLD],
             ["CLASSIFICATION", "HOLLOW WIN (0,1,1) ✗", RED],
@@ -729,8 +729,8 @@ const CSTEPS = [
     desc: "Do all three conditions hold? If any fails, the impossibility does not apply.",
     libor: "Overlapping Interests ✓ (both parties benefited from rate manipulation). System Independence ✓ (benchmark integrity not reducible to bank payoffs). System Dependence ✓ (rate submissions directly determined W). All three hold. Impossibility applies." },
   { step: 4, title: "COMPUTE SYSTEM BETA AND WELFARE COST", phase: "diagnostic",
-    desc: "β_W = −dW/dΠ. Estimate the welfare destruction per dollar of private gain.",
-    libor: "β_W ≈ 5.5. Total welfare cost: $9B+ in documented penalties, plus unquantified damage to benchmark integrity, counterparty trust, and regulatory confidence. Seven years undetected." },
+    desc: "βW = −dW/dΠ. Estimate the welfare destruction per dollar of private gain.",
+    libor: "βW ≈ 5.5. Total welfare cost: $9B+ in documented penalties, plus unquantified damage to benchmark integrity, counterparty trust, and regulatory confidence. Seven years undetected." },
   { step: 5, title: "ESTIMATE CROSSOVER TIME", phase: "diagnostic",
     desc: "T* = δ/(ηλ). When does the Hollow Win collapse into outright failure?",
     libor: "T* ≤ 0 by the time regulators acted — the system had already failed. The Hollow Win had run past its crossover point before detection." },
@@ -952,13 +952,13 @@ function Chapter7() {
       <Card>
         <div style={{ fontFamily: M, fontSize: 14, color: GOLD, fontWeight: 600, marginBottom: 8 }}>LEVEL 2 — THE EXECUTIVE OR BOARD MEMBER</div>
         <div style={{ fontFamily: S, fontSize: 15, color: DIM, lineHeight: 1.7 }}>
-          You have authority over the game design. Restructure compensation to align with system welfare. Commission an independent <Tip term="W">W</Tip>-audit of major revenue streams. Implement the three <Tip term="GDSS">GDSS</Tip> requirements (R1, R2, R3). The question: "Which of our revenue streams has the highest <Tip term="β_W">β_W</Tip>? What are we building on?"
+          You have authority over the game design. Restructure compensation to align with system welfare. Commission an independent <Tip term="W">W</Tip>-audit of major revenue streams. Implement the three <Tip term="GDSS">GDSS</Tip> requirements (R1, R2, R3). The question: "Which of our revenue streams has the highest <Tip term="β_W">β<sub>W</sub></Tip>? What are we building on?"
         </div>
       </Card>
       <Card>
         <div style={{ fontFamily: M, fontSize: 14, color: GOLD, fontWeight: 600, marginBottom: 8 }}>LEVEL 3 — THE REGULATOR OR INDUSTRY BODY</div>
         <div style={{ fontFamily: S, fontSize: 15, color: DIM, lineHeight: 1.7 }}>
-          Mandate W-monitoring as a condition of market participation. Require decomposed payoff reporting. Design structural separation to break <Tip term="PST">PST</Tip>. The question: "Which sectors in our jurisdiction have β_W {">"} 2.0? What is our <Tip term="T*">T*</Tip> for each?"
+          Mandate W-monitoring as a condition of market participation. Require decomposed payoff reporting. Design structural separation to break <Tip term="PST">PST</Tip>. The question: "Which sectors in our jurisdiction have β<sub>W</sub> {">"} 2.0? What is our <Tip term="T*">T*</Tip> for each?"
         </div>
       </Card>
       <Card>
@@ -1045,7 +1045,7 @@ function Chapter8() {
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                   <div style={{ fontFamily: M, fontSize: 14, fontWeight: 600, color: TEXT }}>{d.name}</div>
                   <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                    {d.beta && <span style={{ fontFamily: M, fontSize: 13, color: GOLD }}>β_W: {d.beta}</span>}
+                    {d.beta && <span style={{ fontFamily: M, fontSize: 13, color: GOLD }}>β<sub>W</sub>: {d.beta}</span>}
                     <span style={{ fontFamily: M, fontSize: 12, color: MUTED }}>{isExpanded ? "−" : "+"}</span>
                   </div>
                 </div>
@@ -1168,7 +1168,7 @@ export default function Curriculum({ onDeepDive }) {
         {/* DEEP DIVE DIVIDER */}
         <div style={{ borderTop: `2px solid ${GOLD}`, margin: "64px 0 32px", paddingTop: 24, textAlign: "center" }}>
           <div style={{ fontFamily: M, fontSize: 12, color: GOLD, letterSpacing: 3 }}>DEEP DIVE — FOR RESEARCHERS AND PRACTITIONERS</div>
-          <div style={{ fontFamily: S, fontSize: 15, color: MUTED, marginTop: 8 }}>Interactive timeline, domain theorems, β_W rankings, T* explorer, case comparison, Conflictoring walkthrough</div>
+          <div style={{ fontFamily: S, fontSize: 15, color: MUTED, marginTop: 8 }}>Interactive timeline, domain theorems, β<sub>W</sub> rankings, T* explorer, case comparison, Conflictoring walkthrough</div>
           {onDeepDive && (
             <button onClick={onDeepDive} style={{ fontFamily: M, fontSize: 13, padding: "10px 24px", marginTop: 16, background: "rgba(245,158,11,0.1)", border: `1px solid rgba(245,158,11,0.3)`, color: GOLD, borderRadius: 4, cursor: "pointer" }}>
               ENTER DEEP DIVE →

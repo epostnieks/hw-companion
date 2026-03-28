@@ -62,8 +62,8 @@ const CONFLICTORING = [
     desc: "Do all three Private-Systemic Tension axioms hold? (1) Overlapping interests, (2) System independence, (3) System dependence. If any fails, the impossibility does not apply.",
     libor: "All three hold. (1) Overlapping interests: both sets of banks gained from rate manipulation. (2) System independence: benchmark integrity cannot be expressed as a function of bank payoffs — W is structurally orthogonal. (3) System dependence: rate submissions directly set the benchmark. Every manipulation moved W." },
   { step: 4, title: "Compute System Beta", phase: "diagnostic",
-    desc: "β_W = −dW/dΠ. The marginal rate of system welfare destruction per dollar of private gain. This is the SAPM's central measurement.",
-    libor: "β_W ≈ 5.5. Penalties exceeded $9 billion across 12+ institutions. Seven years undetected. The ratio of system damage to private gain was extreme — every dollar of spread manipulation destroyed multiples in benchmark trust, contract reliability, and regulatory integrity." },
+    desc: "βW = −dW/dΠ. The marginal rate of system welfare destruction per dollar of private gain. This is the SAPM's central measurement.",
+    libor: "βW ≈ 5.5. Penalties exceeded $9 billion across 12+ institutions. Seven years undetected. The ratio of system damage to private gain was extreme — every dollar of spread manipulation destroyed multiples in benchmark trust, contract reliability, and regulatory integrity." },
   { step: 5, title: "Estimate Crossover Time", phase: "diagnostic",
     desc: "T* = δ/(ηλ). When does the Hollow Win collapse into outright failure? This is the countdown clock.",
     libor: "T* ≤ 0 by the time regulators acted. The system damage had already exceeded the cumulative private gains. The Hollow Win had collapsed — the question was no longer 'when will it break' but 'how badly has it already broken.' Detection came from a whistleblower, not from market signals." },
@@ -379,9 +379,9 @@ export default function HWCompanion() {
               ))}
             </div>
             <Card highlight>
-              <div style={{ fontFamily: FONTS.mono, fontSize: 12, color: MUTED, marginBottom: 8 }}>WHAT β_W MEANS</div>
+              <div style={{ fontFamily: FONTS.mono, fontSize: 12, color: MUTED, marginBottom: 8 }}>WHAT β<sub>W</sub> MEANS</div>
               <div style={{ fontFamily: FONTS.serif, fontSize: 15, color: DIM, lineHeight: 1.7 }}>
-                β_W = −dW/dΠ. The marginal rate of system welfare destruction per dollar of private gain. Computed from the quadratic Private-Systemic Frontier (Proposition 15). β_W = 6.8 means every dollar of engineering cost VW avoided by not installing SCR urea systems destroyed $6.80 of system welfare — in health costs, regulatory integrity, competitive distortion, and environmental damage. Full derivation: companion workbook.
+                β<sub>W</sub> = −dW/dΠ. The marginal rate of system welfare destruction per dollar of private gain. Computed from the quadratic Private-Systemic Frontier (Proposition 15). β<sub>W</sub> = 6.8 means every dollar of engineering cost VW avoided by not installing SCR urea systems destroyed $6.80 of system welfare — in health costs, regulatory integrity, competitive distortion, and environmental damage. Full derivation: companion workbook.
               </div>
             </Card>
           </div>
