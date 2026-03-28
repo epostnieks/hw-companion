@@ -440,10 +440,52 @@ function Chapter4() {
         </div>
       ))}
 
-      {/* THE RESULT */}
-      <div style={{ padding: "20px 24px", background: "rgba(245,158,11,0.08)", border: `2px solid rgba(245,158,11,0.2)`, borderRadius: 4, margin: "24px 0", textAlign: "center" }}>
-        <div style={{ fontFamily: S, fontSize: 18, color: GOLD, lineHeight: 1.6 }}>
-          When all three conditions hold: every outcome where both parties gain necessarily degrades the system. And no analysis of what they received can detect it.
+      {/* WHAT THESE WORDS ACTUALLY MEAN */}
+      <div style={{ fontFamily: M, fontSize: 10, color: GOLD, letterSpacing: 2, margin: "32px 0 12px" }}>WHAT THESE WORDS ACTUALLY MEAN</div>
+
+      <div style={{ padding: "20px 24px", background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: 4, marginBottom: 12 }}>
+        <div style={{ fontFamily: M, fontSize: 11, fontWeight: 600, color: GOLD, marginBottom: 8 }}>AXIOM 1 — OVERLAPPING INTERESTS</div>
+        <P>Both sides want to make a deal. There is something to be gained by cooperating. Without this, there is no negotiation and no <Tip term="Hollow Win">Hollow Win</Tip>.</P>
+        <div style={{ padding: "12px 16px", background: "rgba(245,158,11,0.04)", borderRadius: 4, marginTop: 8 }}>
+          <Label>LIBOR EXAMPLE</Label>
+          <div style={{ fontFamily: S, fontSize: 13, color: DIM, lineHeight: 1.7 }}>Two LIBOR panel banks both benefit from submitting manipulated rates. The deal exists. The cooperation is real.</div>
+        </div>
+      </div>
+
+      <div style={{ padding: "20px 24px", background: SURFACE, border: `2px solid rgba(245,158,11,0.2)`, borderRadius: 4, marginBottom: 12 }}>
+        <div style={{ fontFamily: M, fontSize: 11, fontWeight: 600, color: GOLD, marginBottom: 8 }}>AXIOM 2 — SYSTEM INDEPENDENCE <span style={{ color: RED, fontSize: 10, fontWeight: 400 }}>(THE KEY ONE)</span></div>
+        <P>The health of the shared system is a separate fact — it cannot be calculated from what A got or what B got. You could know everything about both payoffs and still have no idea whether the system survived.</P>
+        <div style={{ padding: "12px 16px", background: "rgba(245,158,11,0.04)", borderRadius: 4, marginTop: 8, marginBottom: 8 }}>
+          <Label>LIBOR EXAMPLE</Label>
+          <div style={{ fontFamily: S, fontSize: 13, color: DIM, lineHeight: 1.7 }}>Knowing exactly what each LIBOR trader earned tells you nothing about whether the global benchmark is intact. The benchmark's health is a different variable. It lives outside the payoff space.</div>
+        </div>
+        <div style={{ fontFamily: S, fontSize: 13, color: GOLD, fontStyle: "italic", lineHeight: 1.7 }}>
+          This is the key axiom because without it, standard analysis would suffice. The theorem stands or falls on this one.
+        </div>
+      </div>
+
+      <div style={{ padding: "20px 24px", background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: 4, marginBottom: 12 }}>
+        <div style={{ fontFamily: M, fontSize: 11, fontWeight: 600, color: GOLD, marginBottom: 8 }}>AXIOM 3 — SYSTEM DEPENDENCE</div>
+        <P>What A and B do together has real consequences for the system around them. Their deal is not isolated.</P>
+        <div style={{ padding: "12px 16px", background: "rgba(245,158,11,0.04)", borderRadius: 4, marginTop: 8 }}>
+          <Label>LIBOR EXAMPLE</Label>
+          <div style={{ fontFamily: S, fontSize: 13, color: DIM, lineHeight: 1.7 }}>LIBOR rate submissions directly set the benchmark. If the deal had no effect on anything outside itself, there would be nothing to detect.</div>
+        </div>
+      </div>
+
+      {/* WHEN ALL THREE HOLD / WHEN ANY ONE FAILS */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, margin: "16px 0 24px" }}>
+        <div style={{ padding: "20px", background: "rgba(239,68,68,0.06)", border: `1px solid rgba(239,68,68,0.15)`, borderRadius: 4 }}>
+          <div style={{ fontFamily: M, fontSize: 10, color: RED, letterSpacing: 1, marginBottom: 8 }}>WHEN ALL THREE HOLD</div>
+          <div style={{ fontFamily: S, fontSize: 13, color: TEXT, lineHeight: 1.8 }}>
+            Every bilaterally efficient outcome degrades the system. And no analysis of what the parties received can detect it.
+          </div>
+        </div>
+        <div style={{ padding: "20px", background: "rgba(34,197,94,0.06)", border: `1px solid rgba(34,197,94,0.15)`, borderRadius: 4 }}>
+          <div style={{ fontFamily: M, fontSize: 10, color: GREEN, letterSpacing: 1, marginBottom: 8 }}>WHEN ANY ONE FAILS</div>
+          <div style={{ fontFamily: S, fontSize: 13, color: TEXT, lineHeight: 1.8 }}>
+            The impossibility does not apply. The framework specifies exactly 12 game types where at least one axiom fails — pure exchange economies, zero-sum games, congestion games, cooperatives. In those domains, this theorem says nothing.
+          </div>
         </div>
       </div>
 
