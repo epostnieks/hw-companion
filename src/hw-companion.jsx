@@ -50,16 +50,40 @@ const CALVANO_DATA = [
   { name: "c=1 outcomes", value: 23, color: GREEN },
 ];
 
-// === CONFLICTORING STEPS ===
+// === CONFLICTORING PROTOCOL — GENERIC + LIBOR WORKED EXAMPLE ===
 const CONFLICTORING = [
-  { step: 1, title: "Identify Parties", desc: "Who are A, B?" },
-  { step: 2, title: "Specify System C", desc: "What shared system are they embedded in?" },
-  { step: 3, title: "Classify (a, b)", desc: "Did each party gain? Standard bilateral assessment." },
-  { step: 4, title: "Classify c", desc: "Is the system preserved (c=1) or degraded (c=0)? Requires independent W-signal." },
-  { step: 5, title: "Name the Outcome", desc: "Map (c,a,b) to the 8-type taxonomy." },
-  { step: 6, title: "If Hollow Win: Compute T*", desc: "T* = δ/(ηλ). How long until systemic losses overwhelm private gains?" },
-  { step: 7, title: "Identify Resolution Tier", desc: "Organizational (Tier 1)? Industry (Tier 2)? Market (Tier 3)? Regulatory gap (Tier 4)?" },
-  { step: 8, title: "Search for Win-Win-Win", desc: "Expand the game. Break one axiom by design. Ostrom's principles. Mechanism redesign." },
+  { step: 1, title: "Name the Parties", phase: "diagnostic",
+    desc: "Identify A, B, and the system C they are embedded in. The system boundary must be stated explicitly — classification depends on it.",
+    libor: "A = Panel banks (Barclays, UBS, Deutsche Bank, RBS, etc.). B = Counterparty banks and traders on the other side. System C = Global financial benchmark integrity — $350 trillion in contracts referenced LIBOR daily." },
+  { step: 2, title: "Classify the Current Outcome", phase: "diagnostic",
+    desc: "Apply the 8-outcome taxonomy. Is this Win-Win-Win (1,1,1) or Hollow Win (0,1,1)? Measure or estimate W.",
+    libor: "Classification: Hollow Win (0,1,1). Both sides of the rate-submission conspiracy gained — supracompetitive spreads, controlled funding costs. But benchmark integrity was destroyed. Standard vocabulary at the time called it 'cooperation' and 'market-making.'" },
+  { step: 3, title: "Identify the PST Axioms", phase: "diagnostic",
+    desc: "Do all three Private-Systemic Tension axioms hold? (1) Overlapping interests, (2) System independence, (3) System dependence. If any fails, the impossibility does not apply.",
+    libor: "All three hold. (1) Overlapping interests: both sets of banks gained from rate manipulation. (2) System independence: benchmark integrity cannot be expressed as a function of bank payoffs — W is structurally orthogonal. (3) System dependence: rate submissions directly set the benchmark. Every manipulation moved W." },
+  { step: 4, title: "Compute System Beta", phase: "diagnostic",
+    desc: "β_W = −dW/dΠ. The marginal rate of system welfare destruction per dollar of private gain. This is the SAPM's central measurement.",
+    libor: "β_W ≈ 5.5. Penalties exceeded $9 billion across 12+ institutions. Seven years undetected. The ratio of system damage to private gain was extreme — every dollar of spread manipulation destroyed multiples in benchmark trust, contract reliability, and regulatory integrity." },
+  { step: 5, title: "Estimate Crossover Time", phase: "diagnostic",
+    desc: "T* = δ/(ηλ). When does the Hollow Win collapse into outright failure? This is the countdown clock.",
+    libor: "T* ≤ 0 by the time regulators acted. The system damage had already exceeded the cumulative private gains. The Hollow Win had collapsed — the question was no longer 'when will it break' but 'how badly has it already broken.' Detection came from a whistleblower, not from market signals." },
+  { step: 6, title: "Map the Response Ladder", phase: "resolution",
+    desc: "Four tiers of intervention. Tier 1: Individual (document, whistleblow). Tier 2: Firm (incentive redesign). Tier 3: Industry (regulatory intervention). Tier 4: Sovereign (treaty, structural reform).",
+    libor: "Tier 1 = CFTC whistleblower program (§748) — this is how the scheme was initially exposed. Tier 3 = Regulatory restructuring and $9B+ in penalties across institutions. Tier 4 = FSB benchmark reform and the SOFR transition — international coordination to replace the manipulable survey with a transaction-based rate." },
+  { step: 7, title: "Select Minimum Sufficient Intervention", phase: "resolution",
+    desc: "The lowest tier that breaks PST. Overkill wastes resources and creates resistance. But under-intervention leaves the Hollow Win intact.",
+    libor: "Minimum sufficient intervention = Tier 4 sovereign coordination. Penalties alone (Tier 3) could not fix the structural vulnerability — LIBOR's survey-based design made it permanently manipulable. Only replacing the benchmark architecture (SOFR) broke the PST axioms by design." },
+  { step: 8, title: "Verify Escape — Confirm Win-Win-Win", phase: "resolution",
+    desc: "Confirm C flips from 0 to 1. Win-Win-Win (1,1,1) is the target, not just mitigation. The system must be verifiably preserved.",
+    libor: "SOFR transition verified Win-Win-Win (1,1,1). The new benchmark is transaction-based — derived from ~$1 trillion/day in overnight repo trades. Benchmark integrity restored. C = 1. The game was redesigned so that the PST axioms no longer hold simultaneously." },
+];
+
+// === WHISTLEBLOWER INFRASTRUCTURE ===
+const WHISTLEBLOWER = [
+  { program: "SEC Whistleblower", statute: "Dodd-Frank §21F", reward: "10–30% of sanctions > $1M", scope: "Securities fraud, market manipulation, insider trading", cumulative: "$2.2B+ awarded" },
+  { program: "CFTC Whistleblower", statute: "CEA §748", reward: "10–30% of sanctions > $1M", scope: "Commodities fraud, benchmark manipulation, spoofing", cumulative: "$380M+ awarded" },
+  { program: "FCA Qui Tam", statute: "False Claims Act", reward: "15–30% of recovery", scope: "Government contract fraud, healthcare fraud", cumulative: "$75B+ recovered (total FCA)" },
+  { program: "IRS Whistleblower", statute: "IRC §7623", reward: "15–30% of collected proceeds", scope: "Tax fraud, underpayment > $2M", cumulative: "$6.5B+ collected" },
 ];
 
 const Section = ({ number, title, subtitle }) => (
@@ -85,20 +109,33 @@ const TABS = [
 
 export default function HWCompanion() {
   const [tab, setTab] = useState("cases");
+  const [cStep, setCStep] = useState(0); // 0-indexed: 0=step1, 7=step8, 8=whistleblower panel
 
   return (
     <div style={{ background: BG, color: "rgba(255,255,255,0.8)", minHeight: "100vh", fontFamily: FONTS.serif }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Newsreader:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
         * { box-sizing: border-box; } body { margin: 0; background: ${BG}; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        .pulse { animation: pulse 3s ease-in-out infinite; }
       `}</style>
 
       <header style={{ borderBottom: `1px solid ${BORDER}`, padding: "32px 0 24px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 24px" }}>
-          <div style={{ fontFamily: FONTS.mono, fontSize: 10, color: ACCENT, letterSpacing: 3, marginBottom: 12 }}>COMPANION DASHBOARD</div>
-          <h1 style={{ fontFamily: FONTS.serif, fontSize: 32, fontWeight: 300, margin: 0, color: "rgba(255,255,255,0.95)", lineHeight: 1.2 }}>The Hollow Win</h1>
-          <div style={{ fontFamily: FONTS.serif, fontSize: 14, color: DIM, marginTop: 8, fontStyle: "italic" }}>When the System Breaks, Someone Gets Paid to Fix It</div>
-          <div style={{ fontFamily: FONTS.mono, fontSize: 10, color: MUTED, marginTop: 12 }}>Erik Postnieks · erik@woosterllc.com · Working Paper v3.5 · March 2026</div>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+            <div>
+              <div style={{ fontFamily: FONTS.mono, fontSize: 10, color: ACCENT, letterSpacing: 3, marginBottom: 12 }}>COMPANION DASHBOARD</div>
+              <h1 style={{ fontFamily: FONTS.serif, fontSize: 32, fontWeight: 300, margin: 0, color: "rgba(255,255,255,0.95)", lineHeight: 1.2 }}>The Hollow Win</h1>
+              <div style={{ fontFamily: FONTS.mono, fontSize: 10, color: MUTED, marginTop: 12 }}>Erik Postnieks · Working Paper v3.5 · March 2026</div>
+            </div>
+            <div style={{ fontFamily: FONTS.mono, fontSize: 11, color: DIM, textAlign: "right", display: "flex", gap: 16, alignItems: "center", marginTop: 8 }}>
+              <span><span className="pulse" style={{ color: ACCENT }}>18</span> CASES</span>
+              <span style={{ color: BORDER }}>·</span>
+              <span><span className="pulse" style={{ color: "#DC2626" }}>53%</span> HOLLOW WIN</span>
+              <span style={{ color: BORDER }}>·</span>
+              <span><span className="pulse" style={{ color: YELLOW }}>$95B</span> RECOVERED</span>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -201,22 +238,126 @@ export default function HWCompanion() {
 
         {tab === "conflictoring" && (
           <div>
-            <Section number="§7" title="The Conflictoring Protocol" subtitle="Eight steps from diagnosis to institutional redesign (adapted from Shchinnikov 2021)" />
-            {CONFLICTORING.map(s => (
-              <div key={s.step} style={{ display: "flex", gap: 16, marginBottom: 16, alignItems: "flex-start" }}>
-                <div style={{ fontFamily: FONTS.mono, fontSize: 24, fontWeight: 300, color: s.step <= 5 ? ACCENT : GREEN, minWidth: 40, textAlign: "right" }}>{s.step}</div>
-                <div style={{ borderLeft: `2px solid ${s.step <= 5 ? "rgba(232,93,58,0.3)" : "rgba(5,150,105,0.3)"}`, paddingLeft: 16, paddingBottom: 8 }}>
-                  <div style={{ fontFamily: FONTS.mono, fontSize: 12, fontWeight: 600, color: "rgba(255,255,255,0.8)" }}>{s.title}</div>
-                  <div style={{ fontFamily: FONTS.serif, fontSize: 13, color: MUTED, marginTop: 4 }}>{s.desc}</div>
+            <Section number="§7" title="The Conflictoring Protocol" subtitle="Eight steps from diagnosis to institutional redesign — LIBOR worked example" />
+
+            {/* Progress bar */}
+            <div style={{ display: "flex", gap: 2, marginBottom: 24 }}>
+              {CONFLICTORING.map((s, i) => (
+                <div key={i} onClick={() => setCStep(i)} style={{
+                  flex: 1, height: 4, borderRadius: 2, cursor: "pointer",
+                  background: i <= cStep
+                    ? (s.phase === "diagnostic" ? ACCENT : GREEN)
+                    : BORDER,
+                  transition: "background 0.3s",
+                }} />
+              ))}
+              {/* Whistleblower panel indicator */}
+              <div onClick={() => setCStep(8)} style={{
+                flex: 1, height: 4, borderRadius: 2, cursor: "pointer",
+                background: cStep === 8 ? YELLOW : BORDER,
+                transition: "background 0.3s",
+              }} />
+            </div>
+
+            {/* Phase label */}
+            <div style={{ fontFamily: FONTS.mono, fontSize: 10, letterSpacing: 2, marginBottom: 16, color: cStep === 8 ? YELLOW : cStep < 5 ? ACCENT : GREEN }}>
+              {cStep === 8 ? "INSTITUTIONAL INFRASTRUCTURE" : cStep < 5 ? "DIAGNOSTIC PHASE (STEPS 1–5)" : "RESOLUTION PHASE (STEPS 6–8)"}
+            </div>
+
+            {/* Step content — two-column layout */}
+            {cStep < 8 && (() => {
+              const s = CONFLICTORING[cStep];
+              const phaseColor = s.phase === "diagnostic" ? ACCENT : GREEN;
+              return (
+                <div>
+                  {/* Step header */}
+                  <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 20 }}>
+                    <div style={{ fontFamily: FONTS.mono, fontSize: 32, fontWeight: 300, color: phaseColor }}>{s.step}</div>
+                    <div>
+                      <div style={{ fontFamily: FONTS.mono, fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.9)" }}>{s.title}</div>
+                      <div style={{ fontFamily: FONTS.mono, fontSize: 10, color: MUTED, marginTop: 2 }}>Step {s.step} of 8</div>
+                    </div>
+                  </div>
+
+                  {/* Two-column: Protocol | LIBOR */}
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+                    <div style={{ padding: "16px 20px", background: "rgba(255,255,255,0.02)", border: `1px solid ${BORDER}`, borderRadius: 2 }}>
+                      <div style={{ fontFamily: FONTS.mono, fontSize: 9, color: MUTED, letterSpacing: 1, marginBottom: 8 }}>PROTOCOL</div>
+                      <div style={{ fontFamily: FONTS.serif, fontSize: 14, color: "rgba(255,255,255,0.8)", lineHeight: 1.7 }}>
+                        {s.desc}
+                      </div>
+                    </div>
+                    <div style={{ padding: "16px 20px", background: "rgba(232,93,58,0.04)", border: `1px solid rgba(232,93,58,0.15)`, borderRadius: 2 }}>
+                      <div style={{ fontFamily: FONTS.mono, fontSize: 9, color: ACCENT, letterSpacing: 1, marginBottom: 8 }}>LIBOR — WORKED EXAMPLE</div>
+                      <div style={{ fontFamily: FONTS.serif, fontSize: 13, color: DIM, lineHeight: 1.7 }}>
+                        {s.libor}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Step indicator dots */}
+                  <div style={{ display: "flex", justifyContent: "center", gap: 8, marginTop: 24 }}>
+                    {CONFLICTORING.map((_, i) => (
+                      <div key={i} onClick={() => setCStep(i)} style={{
+                        width: 8, height: 8, borderRadius: "50%", cursor: "pointer",
+                        background: i === cStep ? phaseColor : i < cStep ? "rgba(255,255,255,0.2)" : BORDER,
+                      }} />
+                    ))}
+                  </div>
+                </div>
+              );
+            })()}
+
+            {/* Whistleblower Infrastructure Panel (after step 8) */}
+            {cStep === 8 && (
+              <div>
+                <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 20 }}>
+                  <div style={{ fontFamily: FONTS.mono, fontSize: 32, fontWeight: 300, color: YELLOW }}>★</div>
+                  <div>
+                    <div style={{ fontFamily: FONTS.mono, fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.9)" }}>Whistleblower Infrastructure</div>
+                    <div style={{ fontFamily: FONTS.mono, fontSize: 10, color: MUTED, marginTop: 2 }}>Tier 1 institutional exits — four federal programs</div>
+                  </div>
+                </div>
+
+                <Card highlight>
+                  <div style={{ fontFamily: FONTS.mono, fontSize: 10, color: YELLOW, letterSpacing: 1, marginBottom: 8 }}>CUMULATIVE ENFORCEMENT RECOVERIES</div>
+                  <div className="pulse" style={{ fontFamily: FONTS.mono, fontSize: 36, color: YELLOW }}>$95B+</div>
+                  <div style={{ fontFamily: FONTS.mono, fontSize: 10, color: MUTED, marginTop: 4 }}>Across SEC, CFTC, FCA, and IRS whistleblower programs</div>
+                </Card>
+
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginTop: 16 }}>
+                  {WHISTLEBLOWER.map(w => (
+                    <div key={w.program} style={{ padding: "16px 20px", background: "rgba(255,255,255,0.02)", border: `1px solid ${BORDER}`, borderRadius: 2 }}>
+                      <div style={{ fontFamily: FONTS.mono, fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.8)", marginBottom: 4 }}>{w.program}</div>
+                      <div style={{ fontFamily: FONTS.mono, fontSize: 10, color: YELLOW, marginBottom: 8 }}>{w.statute}</div>
+                      <div style={{ fontFamily: FONTS.mono, fontSize: 10, color: MUTED, lineHeight: 1.8 }}>
+                        Reward: {w.reward}<br/>
+                        Scope: {w.scope}<br/>
+                        Track record: {w.cumulative}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
-            <Card highlight>
-              <div style={{ fontFamily: FONTS.mono, fontSize: 10, color: MUTED, marginBottom: 8 }}>DIAGNOSTIC (1–5) vs. RESOLUTION (6–8)</div>
-              <div style={{ fontFamily: FONTS.serif, fontSize: 13, color: DIM, lineHeight: 1.7 }}>
-                Steps 1–5 classify. Steps 6–8 act. The protocol converts "how do we reach a better outcome?" into a traceable procedure with a verifiable endpoint. For agents at Tier 4 (regulatory gap), four federal whistleblower programs — SEC (Dodd-Frank §21F), CFTC (§748), FCA (qui tam), IRS (§7623) — provide the institutional exit. Cumulative enforcement recoveries: $95B+.
+            )}
+
+            {/* Navigation buttons */}
+            <div style={{ display: "flex", justifyContent: "space-between", marginTop: 24 }}>
+              <button onClick={() => setCStep(Math.max(0, cStep - 1))} disabled={cStep === 0} style={{
+                fontFamily: FONTS.mono, fontSize: 11, padding: "8px 20px", border: `1px solid ${BORDER}`,
+                background: cStep === 0 ? "transparent" : ACCENT + "15", color: cStep === 0 ? MUTED : ACCENT,
+                borderRadius: 2, cursor: cStep === 0 ? "default" : "pointer",
+              }}>← BACK</button>
+              <div style={{ fontFamily: FONTS.mono, fontSize: 10, color: MUTED, alignSelf: "center" }}>
+                {cStep < 8 ? `${cStep + 1} / 8` : "INFRASTRUCTURE"}
               </div>
-            </Card>
+              <button onClick={() => setCStep(Math.min(8, cStep + 1))} disabled={cStep === 8} style={{
+                fontFamily: FONTS.mono, fontSize: 11, padding: "8px 20px", border: `1px solid ${BORDER}`,
+                background: cStep === 8 ? "transparent" : (cStep === 7 ? YELLOW + "15" : ACCENT + "15"),
+                color: cStep === 8 ? MUTED : (cStep === 7 ? YELLOW : ACCENT),
+                borderRadius: 2, cursor: cStep === 8 ? "default" : "pointer",
+              }}>{cStep === 7 ? "WHISTLEBLOWER →" : "NEXT →"}</button>
+            </div>
           </div>
         )}
 
