@@ -54,7 +54,7 @@ function Tip({ term, children }) {
         <span style={{
           position: "absolute", bottom: "100%", left: "50%", transform: "translateX(-50%)",
           background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: 4,
-          padding: "8px 12px", fontFamily: M, fontSize: 11, color: DIM,
+          padding: "8px 12px", fontFamily: M, fontSize: 13, color: DIM,
           width: 280, zIndex: 100, lineHeight: 1.6, marginBottom: 4,
           boxShadow: "0 4px 16px rgba(0,0,0,0.5)",
         }}>
@@ -81,14 +81,14 @@ const CHAPTERS = [
 function ChapterHead({ num, title, subtitle, time }) {
   return (
     <div style={{ marginBottom: 32, paddingTop: 48 }}>
-      <div style={{ fontFamily: M, fontSize: 10, color: GOLD, letterSpacing: 3, marginBottom: 8 }}>
+      <div style={{ fontFamily: M, fontSize: 12, color: GOLD, letterSpacing: 3, marginBottom: 8 }}>
         CHAPTER {num} · {time} read
       </div>
       <h2 style={{ fontFamily: S, fontSize: 28, fontWeight: 300, color: TEXT, margin: 0, lineHeight: 1.3 }}>
         {title}
       </h2>
       {subtitle && (
-        <div style={{ fontFamily: S, fontSize: 15, color: DIM, marginTop: 8, fontStyle: "italic", lineHeight: 1.6 }}>
+        <div style={{ fontFamily: S, fontSize: 17, color: DIM, marginTop: 8, fontStyle: "italic", lineHeight: 1.6 }}>
           {subtitle}
         </div>
       )}
@@ -97,12 +97,12 @@ function ChapterHead({ num, title, subtitle, time }) {
 }
 
 function P({ children }) {
-  return <p style={{ fontFamily: S, fontSize: 15, color: TEXT, lineHeight: 1.8, margin: "0 0 16px" }}>{children}</p>;
+  return <p style={{ fontFamily: S, fontSize: 17, color: TEXT, lineHeight: 1.8, margin: "0 0 16px" }}>{children}</p>;
 }
 
 function GoldCallout({ children }) {
   return (
-    <div style={{ padding: "16px 20px", background: "rgba(245,158,11,0.06)", border: `1px solid rgba(245,158,11,0.15)`, borderRadius: 4, margin: "24px 0", fontFamily: S, fontSize: 14, color: GOLD, lineHeight: 1.7, fontStyle: "italic" }}>
+    <div style={{ padding: "16px 20px", background: "rgba(245,158,11,0.06)", border: `1px solid rgba(245,158,11,0.15)`, borderRadius: 4, margin: "24px 0", fontFamily: S, fontSize: 16, color: GOLD, lineHeight: 1.7, fontStyle: "italic" }}>
       {children}
     </div>
   );
@@ -117,7 +117,7 @@ function Card({ children, border, bg }) {
 }
 
 function Label({ children }) {
-  return <div style={{ fontFamily: M, fontSize: 10, color: MUTED, letterSpacing: 1, marginBottom: 6 }}>{children}</div>;
+  return <div style={{ fontFamily: M, fontSize: 12, color: MUTED, letterSpacing: 1, marginBottom: 6 }}>{children}</div>;
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -139,7 +139,7 @@ function Chapter1() {
       {/* GDP LEDGER VISUAL */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, margin: "32px 0" }}>
         <div style={{ background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: 4, padding: "16px 20px" }}>
-          <div style={{ fontFamily: M, fontSize: 10, color: MUTED, letterSpacing: 1, marginBottom: 12 }}>WHAT GDP RECORDS — LIBOR MANIPULATION</div>
+          <div style={{ fontFamily: M, fontSize: 12, color: MUTED, letterSpacing: 1, marginBottom: 12 }}>WHAT GDP RECORDS — LIBOR MANIPULATION</div>
           {[
             ["Trading desk revenues", "+$2.3B"],
             ["Legal fees (both sides)", "+$480M"],
@@ -148,18 +148,18 @@ function Chapter1() {
             ["Remediation consulting", "+$340M"],
           ].map(([label, val]) => (
             <div key={label} style={{ display: "flex", justifyContent: "space-between", padding: "6px 0", borderBottom: `1px solid ${BORDER}` }}>
-              <span style={{ fontFamily: M, fontSize: 12, color: DIM }}>{label}</span>
-              <span style={{ fontFamily: M, fontSize: 12, color: GREEN }}>{val}</span>
+              <span style={{ fontFamily: M, fontSize: 14, color: DIM }}>{label}</span>
+              <span style={{ fontFamily: M, fontSize: 14, color: GREEN }}>{val}</span>
             </div>
           ))}
           <div style={{ display: "flex", justifyContent: "space-between", padding: "10px 0 0", marginTop: 4 }}>
-            <span style={{ fontFamily: M, fontSize: 12, fontWeight: 600, color: TEXT }}>TOTAL GDP CONTRIBUTION</span>
-            <span style={{ fontFamily: M, fontSize: 14, fontWeight: 600, color: GREEN }}>+$12.3B ✓</span>
+            <span style={{ fontFamily: M, fontSize: 14, fontWeight: 600, color: TEXT }}>TOTAL GDP CONTRIBUTION</span>
+            <span style={{ fontFamily: M, fontSize: 16, fontWeight: 600, color: GREEN }}>+$12.3B ✓</span>
           </div>
         </div>
 
         <div style={{ background: SURFACE, border: `1px solid rgba(239,68,68,0.2)`, borderRadius: 4, padding: "16px 20px" }}>
-          <div style={{ fontFamily: M, fontSize: 10, color: MUTED, letterSpacing: 1, marginBottom: 12 }}>WHAT GDP CANNOT RECORD</div>
+          <div style={{ fontFamily: M, fontSize: 12, color: MUTED, letterSpacing: 1, marginBottom: 12 }}>WHAT GDP CANNOT RECORD</div>
           {[
             ["Benchmark integrity", "DESTROYED"],
             ["$350 trillion in contracts mispriced", "UNDETECTABLE"],
@@ -167,13 +167,13 @@ function Chapter1() {
             ["Future cost of system collapse", "UNDETECTABLE"],
           ].map(([label, val]) => (
             <div key={label} style={{ display: "flex", justifyContent: "space-between", padding: "6px 0", borderBottom: `1px solid ${BORDER}` }}>
-              <span style={{ fontFamily: M, fontSize: 12, color: DIM }}>{label}</span>
-              <span style={{ fontFamily: M, fontSize: 12, color: RED }}>{val}</span>
+              <span style={{ fontFamily: M, fontSize: 14, color: DIM }}>{label}</span>
+              <span style={{ fontFamily: M, fontSize: 14, color: RED }}>{val}</span>
             </div>
           ))}
           <div style={{ display: "flex", justifyContent: "space-between", padding: "10px 0 0", marginTop: 4 }}>
-            <span style={{ fontFamily: M, fontSize: 12, fontWeight: 600, color: TEXT }}>TOTAL <Tip term="W">W</Tip> CONTRIBUTION</span>
-            <span style={{ fontFamily: M, fontSize: 14, fontWeight: 600, color: RED }}>??? ✗</span>
+            <span style={{ fontFamily: M, fontSize: 14, fontWeight: 600, color: TEXT }}>TOTAL <Tip term="W">W</Tip> CONTRIBUTION</span>
+            <span style={{ fontFamily: M, fontSize: 16, fontWeight: 600, color: RED }}>??? ✗</span>
           </div>
         </div>
       </div>
@@ -211,7 +211,7 @@ function Chapter2() {
 
       {/* THE DIMENSION REVEAL */}
       <div style={{ margin: "32px 0" }}>
-        <div style={{ fontFamily: M, fontSize: 10, color: MUTED, letterSpacing: 1, marginBottom: 12 }}>
+        <div style={{ fontFamily: M, fontSize: 12, color: MUTED, letterSpacing: 1, marginBottom: 12 }}>
           {revealed ? "WHAT IS ACTUALLY THERE" : "WHAT STANDARD ANALYSIS SEES"}
         </div>
 
@@ -230,8 +230,8 @@ function Chapter2() {
                 border: cell.a === 1 && cell.b === 1 ? `2px solid ${GOLD}` : `1px solid ${BORDER}`,
                 borderRadius: 4,
               }}>
-                <div style={{ fontFamily: M, fontSize: 11, color: cell.color, fontWeight: cell.a === 1 && cell.b === 1 ? 600 : 400 }}>{cell.label}</div>
-                <div style={{ fontFamily: M, fontSize: 9, color: MUTED, marginTop: 4 }}>
+                <div style={{ fontFamily: M, fontSize: 13, color: cell.color, fontWeight: cell.a === 1 && cell.b === 1 ? 600 : 400 }}>{cell.label}</div>
+                <div style={{ fontFamily: M, fontSize: 11, color: MUTED, marginTop: 4 }}>
                   A={cell.a} B={cell.b}
                 </div>
               </div>
@@ -270,8 +270,8 @@ function Chapter2() {
                       : `1px solid ${BORDER}`,
                     borderRadius: 4,
                   }}>
-                    <div style={{ fontFamily: M, fontSize: 10, color: cell.color, fontWeight: 600 }}>{cell.label}</div>
-                    <div style={{ fontFamily: M, fontSize: 9, color: MUTED, marginTop: 2 }}>
+                    <div style={{ fontFamily: M, fontSize: 12, color: cell.color, fontWeight: 600 }}>{cell.label}</div>
+                    <div style={{ fontFamily: M, fontSize: 11, color: MUTED, marginTop: 2 }}>
                       C={cell.c} A={quad.a} B={quad.b}
                     </div>
                   </div>
@@ -283,7 +283,7 @@ function Chapter2() {
 
         {/* Toggle button */}
         <button onClick={() => setRevealed(!revealed)} style={{
-          fontFamily: M, fontSize: 11, padding: "10px 20px", marginTop: 16,
+          fontFamily: M, fontSize: 13, padding: "10px 20px", marginTop: 16,
           background: revealed ? "rgba(239,68,68,0.1)" : "rgba(245,158,11,0.1)",
           border: `1px solid ${revealed ? "rgba(239,68,68,0.3)" : "rgba(245,158,11,0.3)"}`,
           color: revealed ? RED : GOLD, borderRadius: 4, cursor: "pointer",
@@ -292,7 +292,7 @@ function Chapter2() {
         </button>
 
         {revealed && (
-          <div style={{ fontFamily: M, fontSize: 11, color: RED, marginTop: 16, padding: "8px 12px", background: "rgba(239,68,68,0.06)", border: `1px solid rgba(239,68,68,0.15)`, borderRadius: 4 }}>
+          <div style={{ fontFamily: M, fontSize: 13, color: RED, marginTop: 16, padding: "8px 12px", background: "rgba(239,68,68,0.06)", border: `1px solid rgba(239,68,68,0.15)`, borderRadius: 4 }}>
             STANDARD ANALYSIS CANNOT DISTINGUISH WIN, WIN, WIN FROM HOLLOW WIN
           </div>
         )}
@@ -336,19 +336,19 @@ function Chapter3() {
           }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div>
-                <div style={{ fontFamily: M, fontSize: 12, fontWeight: 600, color: o.color }}>{o.name}</div>
-                <div style={{ fontFamily: M, fontSize: 10, color: MUTED, marginTop: 2 }}>({o.c},{o.a},{o.b})</div>
+                <div style={{ fontFamily: M, fontSize: 14, fontWeight: 600, color: o.color }}>{o.name}</div>
+                <div style={{ fontFamily: M, fontSize: 12, color: MUTED, marginTop: 2 }}>({o.c},{o.a},{o.b})</div>
               </div>
-              <span style={{ fontFamily: M, fontSize: 10, color: MUTED }}>{expanded === i ? "−" : "+"}</span>
+              <span style={{ fontFamily: M, fontSize: 12, color: MUTED }}>{expanded === i ? "−" : "+"}</span>
             </div>
             {expanded === i && (
               <div style={{ marginTop: 12, paddingTop: 12, borderTop: `1px solid ${BORDER}` }}>
                 <Label>INSIDE VIEW</Label>
-                <div style={{ fontFamily: S, fontSize: 13, color: TEXT, lineHeight: 1.6, marginBottom: 10 }}>{o.inside}</div>
+                <div style={{ fontFamily: S, fontSize: 15, color: TEXT, lineHeight: 1.6, marginBottom: 10 }}>{o.inside}</div>
                 <Label>STANDARD LABEL</Label>
-                <div style={{ fontFamily: M, fontSize: 11, color: o.highlight ? RED : DIM, marginBottom: 10 }}>{o.standard}</div>
+                <div style={{ fontFamily: M, fontSize: 13, color: o.highlight ? RED : DIM, marginBottom: 10 }}>{o.standard}</div>
                 <Label>REAL CASE</Label>
-                <div style={{ fontFamily: S, fontSize: 13, color: GOLD, lineHeight: 1.6 }}>{o.realCase}</div>
+                <div style={{ fontFamily: S, fontSize: 15, color: GOLD, lineHeight: 1.6 }}>{o.realCase}</div>
               </div>
             )}
           </div>
@@ -411,7 +411,7 @@ function Chapter4() {
       <P>The Private Pareto Theorem (Postnieks, 2026) proves: in any game where three conditions hold, system welfare <Tip term="W">W</Tip> cannot be expressed as any function of what the parties received. Not approximately. Not under certain conditions. Structurally, constitutively, permanently.</P>
 
       {/* PST AXIOM CARDS */}
-      <div style={{ fontFamily: M, fontSize: 10, color: GOLD, letterSpacing: 1, margin: "32px 0 12px" }}>
+      <div style={{ fontFamily: M, fontSize: 12, color: GOLD, letterSpacing: 1, margin: "32px 0 12px" }}>
         THE THREE CONDITIONS (<Tip term="PST">PST</Tip> — PRIVATE-SYSTEMIC TENSION)
       </div>
 
@@ -425,72 +425,72 @@ function Chapter4() {
           marginBottom: 8, cursor: "pointer",
         }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <div style={{ fontFamily: M, fontSize: 12, fontWeight: 600, color: GOLD }}>{axiom.title}</div>
-            <span style={{ fontFamily: M, fontSize: 10, color: MUTED }}>{pstExpanded === i ? "−" : "+"}</span>
+            <div style={{ fontFamily: M, fontSize: 14, fontWeight: 600, color: GOLD }}>{axiom.title}</div>
+            <span style={{ fontFamily: M, fontSize: 12, color: MUTED }}>{pstExpanded === i ? "−" : "+"}</span>
           </div>
-          <div style={{ fontFamily: S, fontSize: 13, color: DIM, marginTop: 4 }}>{axiom.plain}</div>
+          <div style={{ fontFamily: S, fontSize: 15, color: DIM, marginTop: 4 }}>{axiom.plain}</div>
           {pstExpanded === i && (
             <div style={{ marginTop: 12, paddingTop: 12, borderTop: `1px solid ${BORDER}` }}>
               <Label>PLAIN ENGLISH</Label>
-              <div style={{ fontFamily: S, fontSize: 13, color: TEXT, marginBottom: 8 }}>{axiom.english}</div>
+              <div style={{ fontFamily: S, fontSize: 15, color: TEXT, marginBottom: 8 }}>{axiom.english}</div>
               <Label>WHY IT MATTERS</Label>
-              <div style={{ fontFamily: S, fontSize: 13, color: GOLD, fontStyle: "italic" }}>{axiom.why}</div>
+              <div style={{ fontFamily: S, fontSize: 15, color: GOLD, fontStyle: "italic" }}>{axiom.why}</div>
             </div>
           )}
         </div>
       ))}
 
       {/* WHAT THESE WORDS ACTUALLY MEAN */}
-      <div style={{ fontFamily: M, fontSize: 10, color: GOLD, letterSpacing: 2, margin: "32px 0 12px" }}>WHAT THESE WORDS ACTUALLY MEAN</div>
+      <div style={{ fontFamily: M, fontSize: 12, color: GOLD, letterSpacing: 2, margin: "32px 0 12px" }}>WHAT THESE WORDS ACTUALLY MEAN</div>
 
       <div style={{ padding: "20px 24px", background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: 4, marginBottom: 12 }}>
-        <div style={{ fontFamily: M, fontSize: 11, fontWeight: 600, color: GOLD, marginBottom: 8 }}>AXIOM 1 — OVERLAPPING INTERESTS</div>
+        <div style={{ fontFamily: M, fontSize: 13, fontWeight: 600, color: GOLD, marginBottom: 8 }}>AXIOM 1 — OVERLAPPING INTERESTS</div>
         <P>Both sides want to make a deal. There is something to be gained by cooperating. Without this, there is no negotiation and no <Tip term="Hollow Win">Hollow Win</Tip>.</P>
         <div style={{ padding: "12px 16px", background: "rgba(245,158,11,0.04)", borderRadius: 4, marginTop: 8 }}>
           <Label>LIBOR EXAMPLE</Label>
-          <div style={{ fontFamily: S, fontSize: 13, color: DIM, lineHeight: 1.7 }}>Two LIBOR panel banks both benefit from submitting manipulated rates. The deal exists. The cooperation is real.</div>
+          <div style={{ fontFamily: S, fontSize: 15, color: DIM, lineHeight: 1.7 }}>Two LIBOR panel banks both benefit from submitting manipulated rates. The deal exists. The cooperation is real.</div>
         </div>
       </div>
 
       <div style={{ padding: "20px 24px", background: SURFACE, border: `2px solid rgba(245,158,11,0.2)`, borderRadius: 4, marginBottom: 12 }}>
-        <div style={{ fontFamily: M, fontSize: 11, fontWeight: 600, color: GOLD, marginBottom: 8 }}>AXIOM 2 — SYSTEM INDEPENDENCE <span style={{ color: RED, fontSize: 10, fontWeight: 400 }}>(THE KEY ONE)</span></div>
+        <div style={{ fontFamily: M, fontSize: 13, fontWeight: 600, color: GOLD, marginBottom: 8 }}>AXIOM 2 — SYSTEM INDEPENDENCE <span style={{ color: RED, fontSize: 12, fontWeight: 400 }}>(THE KEY ONE)</span></div>
         <P>The health of the shared system is a separate fact — it cannot be calculated from what A got or what B got. You could know everything about both payoffs and still have no idea whether the system survived.</P>
         <div style={{ padding: "12px 16px", background: "rgba(245,158,11,0.04)", borderRadius: 4, marginTop: 8, marginBottom: 8 }}>
           <Label>LIBOR EXAMPLE</Label>
-          <div style={{ fontFamily: S, fontSize: 13, color: DIM, lineHeight: 1.7 }}>Knowing exactly what each LIBOR trader earned tells you nothing about whether the global benchmark is intact. The benchmark's health is a different variable. It lives outside the payoff space.</div>
+          <div style={{ fontFamily: S, fontSize: 15, color: DIM, lineHeight: 1.7 }}>Knowing exactly what each LIBOR trader earned tells you nothing about whether the global benchmark is intact. The benchmark's health is a different variable. It lives outside the payoff space.</div>
         </div>
-        <div style={{ fontFamily: S, fontSize: 13, color: GOLD, fontStyle: "italic", lineHeight: 1.7 }}>
+        <div style={{ fontFamily: S, fontSize: 15, color: GOLD, fontStyle: "italic", lineHeight: 1.7 }}>
           This is the key axiom because without it, standard analysis would suffice. The theorem stands or falls on this one.
         </div>
       </div>
 
       <div style={{ padding: "20px 24px", background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: 4, marginBottom: 12 }}>
-        <div style={{ fontFamily: M, fontSize: 11, fontWeight: 600, color: GOLD, marginBottom: 8 }}>AXIOM 3 — SYSTEM DEPENDENCE</div>
+        <div style={{ fontFamily: M, fontSize: 13, fontWeight: 600, color: GOLD, marginBottom: 8 }}>AXIOM 3 — SYSTEM DEPENDENCE</div>
         <P>What A and B do together has real consequences for the system around them. Their deal is not isolated.</P>
         <div style={{ padding: "12px 16px", background: "rgba(245,158,11,0.04)", borderRadius: 4, marginTop: 8 }}>
           <Label>LIBOR EXAMPLE</Label>
-          <div style={{ fontFamily: S, fontSize: 13, color: DIM, lineHeight: 1.7 }}>LIBOR rate submissions directly set the benchmark. If the deal had no effect on anything outside itself, there would be nothing to detect.</div>
+          <div style={{ fontFamily: S, fontSize: 15, color: DIM, lineHeight: 1.7 }}>LIBOR rate submissions directly set the benchmark. If the deal had no effect on anything outside itself, there would be nothing to detect.</div>
         </div>
       </div>
 
       {/* WHEN ALL THREE HOLD / WHEN ANY ONE FAILS */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, margin: "16px 0 24px" }}>
         <div style={{ padding: "20px", background: "rgba(239,68,68,0.06)", border: `1px solid rgba(239,68,68,0.15)`, borderRadius: 4 }}>
-          <div style={{ fontFamily: M, fontSize: 10, color: RED, letterSpacing: 1, marginBottom: 8 }}>WHEN ALL THREE HOLD</div>
-          <div style={{ fontFamily: S, fontSize: 13, color: TEXT, lineHeight: 1.8 }}>
+          <div style={{ fontFamily: M, fontSize: 12, color: RED, letterSpacing: 1, marginBottom: 8 }}>WHEN ALL THREE HOLD</div>
+          <div style={{ fontFamily: S, fontSize: 15, color: TEXT, lineHeight: 1.8 }}>
             Every bilaterally efficient outcome degrades the system. And no analysis of what the parties received can detect it.
           </div>
         </div>
         <div style={{ padding: "20px", background: "rgba(34,197,94,0.06)", border: `1px solid rgba(34,197,94,0.15)`, borderRadius: 4 }}>
-          <div style={{ fontFamily: M, fontSize: 10, color: GREEN, letterSpacing: 1, marginBottom: 8 }}>WHEN ANY ONE FAILS</div>
-          <div style={{ fontFamily: S, fontSize: 13, color: TEXT, lineHeight: 1.8 }}>
+          <div style={{ fontFamily: M, fontSize: 12, color: GREEN, letterSpacing: 1, marginBottom: 8 }}>WHEN ANY ONE FAILS</div>
+          <div style={{ fontFamily: S, fontSize: 15, color: TEXT, lineHeight: 1.8 }}>
             The impossibility does not apply. The framework specifies exactly 12 game types where at least one axiom fails — pure exchange economies, zero-sum games, congestion games, cooperatives. In those domains, this theorem says nothing.
           </div>
         </div>
       </div>
 
       {/* COMPACT CANON TIMELINE */}
-      <div style={{ fontFamily: M, fontSize: 10, color: MUTED, letterSpacing: 1, margin: "32px 0 12px" }}>THE 16-THEOREM CANON</div>
+      <div style={{ fontFamily: M, fontSize: 12, color: MUTED, letterSpacing: 1, margin: "32px 0 12px" }}>THE 16-THEOREM CANON</div>
       <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
         {CANON.map(t => (
           <div key={t.num} style={{
@@ -500,10 +500,10 @@ function Chapter4() {
             border: t.num === 16 ? `1px solid rgba(245,158,11,0.15)` : "1px solid transparent",
             borderRadius: 2,
           }}>
-            <span style={{ fontFamily: M, fontSize: 10, color: t.num === 16 ? GOLD : MUTED }}>#{t.num}</span>
-            <span style={{ fontFamily: M, fontSize: 10, color: DIM }}>{t.year}</span>
-            <span style={{ fontFamily: M, fontSize: 11, color: t.num === 16 ? GOLD : TEXT }}>{t.name}</span>
-            <span style={{ fontFamily: M, fontSize: 9, color: t.nobel ? GOLD : "rgba(255,255,255,0.15)" }}>{t.nobel ? `★ ${t.nobel}` : ""}</span>
+            <span style={{ fontFamily: M, fontSize: 12, color: t.num === 16 ? GOLD : MUTED }}>#{t.num}</span>
+            <span style={{ fontFamily: M, fontSize: 12, color: DIM }}>{t.year}</span>
+            <span style={{ fontFamily: M, fontSize: 13, color: t.num === 16 ? GOLD : TEXT }}>{t.name}</span>
+            <span style={{ fontFamily: M, fontSize: 11, color: t.nobel ? GOLD : "rgba(255,255,255,0.15)" }}>{t.nobel ? `★ ${t.nobel}` : ""}</span>
           </div>
         ))}
       </div>
@@ -511,7 +511,7 @@ function Chapter4() {
       <GoldCallout>The 15 preceding theorems proved you cannot get what you want. This one proves you cannot see what you are losing.</GoldCallout>
 
       {/* CAPM VS SAPM TABLE */}
-      <div style={{ fontFamily: M, fontSize: 10, color: GOLD, letterSpacing: 1, margin: "32px 0 12px" }}>
+      <div style={{ fontFamily: M, fontSize: 12, color: GOLD, letterSpacing: 1, margin: "32px 0 12px" }}>
         <Tip term="CAPM">CAPM</Tip> VS <Tip term="SAPM">SAPM</Tip>
       </div>
       <div style={{ border: `1px solid ${BORDER}`, borderRadius: 4, overflow: "hidden" }}>
@@ -520,15 +520,15 @@ function Chapter4() {
             display: "grid", gridTemplateColumns: "140px 1fr 1fr",
             borderBottom: i < CAPM_SAPM.length - 1 ? `1px solid ${BORDER}` : "none",
           }}>
-            <div style={{ padding: "10px 14px", fontFamily: M, fontSize: 10, color: MUTED, background: "rgba(255,255,255,0.02)" }}>{label}</div>
-            <div style={{ padding: "10px 14px", fontFamily: M, fontSize: 11, color: DIM, borderLeft: `1px solid ${BORDER}` }}>{capm}</div>
-            <div style={{ padding: "10px 14px", fontFamily: M, fontSize: 11, color: GOLD, borderLeft: `1px solid ${BORDER}` }}>{sapm}</div>
+            <div style={{ padding: "10px 14px", fontFamily: M, fontSize: 12, color: MUTED, background: "rgba(255,255,255,0.02)" }}>{label}</div>
+            <div style={{ padding: "10px 14px", fontFamily: M, fontSize: 13, color: DIM, borderLeft: `1px solid ${BORDER}` }}>{capm}</div>
+            <div style={{ padding: "10px 14px", fontFamily: M, fontSize: 13, color: GOLD, borderLeft: `1px solid ${BORDER}` }}>{sapm}</div>
           </div>
         ))}
       </div>
 
       <P style={{ marginTop: 16 }}>
-        <span style={{ fontFamily: S, fontSize: 14, color: DIM, lineHeight: 1.7 }}>
+        <span style={{ fontFamily: S, fontSize: 16, color: DIM, lineHeight: 1.7 }}>
           <Tip term="CAPM">CAPM</Tip> told investors that some assets are riskier than they look. <Tip term="SAPM">SAPM</Tip> tells governments that some industries are more destructive than they look. Same architecture. Same logical structure. Different stakes.
         </span>
       </P>
@@ -577,15 +577,15 @@ function Chapter5() {
 
       <P>Welfare beta (<Tip term="β_W">β_W</Tip>) measures the marginal rate of system welfare destruction per dollar of private gain. A sector with β_W = 1.0 destroys one dollar of social welfare for every dollar of revenue. A sector with β_W = 35.2 destroys thirty-five.</P>
 
-      <div style={{ fontFamily: M, fontSize: 10, color: GOLD, letterSpacing: 1, margin: "24px 0 12px" }}>β_W RANKINGS</div>
+      <div style={{ fontFamily: M, fontSize: 12, color: GOLD, letterSpacing: 1, margin: "24px 0 12px" }}>β_W RANKINGS</div>
       <div style={{ height: 680 }}>
         <ResponsiveContainer>
           <BarChart data={BETA_CHART_DATA} layout="vertical" margin={{ left: 160, right: 30, top: 5, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
-            <XAxis type="number" tick={{ fill: MUTED, fontFamily: M, fontSize: 10 }} />
-            <YAxis type="category" dataKey="domain" tick={{ fill: DIM, fontFamily: M, fontSize: 9 }} width={150} interval={0} />
+            <XAxis type="number" tick={{ fill: MUTED, fontFamily: M, fontSize: 12 }} />
+            <YAxis type="category" dataKey="domain" tick={{ fill: DIM, fontFamily: M, fontSize: 11 }} width={150} interval={0} />
             <RTooltip
-              contentStyle={{ background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: 4, fontFamily: M, fontSize: 11, color: DIM, maxWidth: 320 }}
+              contentStyle={{ background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: 4, fontFamily: M, fontSize: 13, color: DIM, maxWidth: 320 }}
               formatter={(val, name, props) => [props.payload.tip, `β_W = ${val}`]}
             />
             <Bar dataKey="beta" radius={[0, 3, 3, 0]}>
@@ -598,7 +598,7 @@ function Chapter5() {
       </div>
 
       {/* C-ADJUSTED GDP PANEL */}
-      <div style={{ fontFamily: M, fontSize: 10, color: GOLD, letterSpacing: 1, margin: "32px 0 12px" }}>
+      <div style={{ fontFamily: M, fontSize: 12, color: GOLD, letterSpacing: 1, margin: "32px 0 12px" }}>
         <Tip term="c-adjusted GDP">C-ADJUSTED GDP</Tip> — THE WELFARE-ADJUSTED ACCOUNTS
       </div>
 
@@ -611,21 +611,21 @@ function Chapter5() {
         ].map(d => (
           <Card key={d.val} border="rgba(245,158,11,0.15)" bg="rgba(245,158,11,0.04)">
             <div style={{ fontFamily: M, fontSize: 28, color: RED, fontWeight: 600 }}>{d.val}</div>
-            <div style={{ fontFamily: M, fontSize: 11, color: TEXT, marginTop: 4 }}>{d.label}</div>
-            <div style={{ fontFamily: S, fontSize: 13, color: DIM, marginTop: 8, fontStyle: "italic" }}>{d.note}</div>
+            <div style={{ fontFamily: M, fontSize: 13, color: TEXT, marginTop: 4 }}>{d.label}</div>
+            <div style={{ fontFamily: S, fontSize: 15, color: DIM, marginTop: 8, fontStyle: "italic" }}>{d.note}</div>
           </Card>
         ))}
       </div>
 
       <div style={{ padding: "20px 24px", background: "rgba(239,68,68,0.06)", border: `2px solid rgba(239,68,68,0.15)`, borderRadius: 4, margin: "24px 0", textAlign: "center" }}>
         <div style={{ fontFamily: M, fontSize: 36, color: RED, fontWeight: 600 }}>~$20T</div>
-        <div style={{ fontFamily: M, fontSize: 12, color: TEXT, marginTop: 4 }}>Global annual <Tip term="Hollow Win">Hollow Win</Tip></div>
-        <div style={{ fontFamily: S, fontSize: 14, color: DIM, marginTop: 8, fontStyle: "italic" }}>The largest unmeasured number in economics. Larger than the US economy in 1980.</div>
+        <div style={{ fontFamily: M, fontSize: 14, color: TEXT, marginTop: 4 }}>Global annual <Tip term="Hollow Win">Hollow Win</Tip></div>
+        <div style={{ fontFamily: S, fontSize: 16, color: DIM, marginTop: 8, fontStyle: "italic" }}>The largest unmeasured number in economics. Larger than the US economy in 1980.</div>
       </div>
 
       <div style={{ textAlign: "center", margin: "16px 0" }}>
         <a href="https://c-adjusted-gdp.vercel.app" target="_blank" rel="noopener noreferrer" style={{
-          fontFamily: M, fontSize: 11, padding: "10px 24px", display: "inline-block",
+          fontFamily: M, fontSize: 13, padding: "10px 24px", display: "inline-block",
           background: "rgba(245,158,11,0.1)", border: `1px solid rgba(245,158,11,0.3)`,
           color: GOLD, borderRadius: 4, textDecoration: "none",
         }}>EXPLORE THE C-ADJUSTED GDP DASHBOARD →</a>
@@ -650,7 +650,7 @@ function Chapter6() {
       {/* GDSS COMPARISON */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, margin: "32px 0" }}>
         <div style={{ background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: 4, padding: "16px 20px" }}>
-          <div style={{ fontFamily: M, fontSize: 10, color: MUTED, letterSpacing: 1, marginBottom: 12 }}>CURRENT <Tip term="GDSS">GDSS</Tip> SCREEN</div>
+          <div style={{ fontFamily: M, fontSize: 12, color: MUTED, letterSpacing: 1, marginBottom: 12 }}>CURRENT <Tip term="GDSS">GDSS</Tip> SCREEN</div>
           {[
             ["Party A payoff", "847 utils ✓", GREEN],
             ["Party B payoff", "823 utils ✓", GREEN],
@@ -659,14 +659,14 @@ function Chapter6() {
             ["RECOMMENDATION", "ACCEPT ✓", GREEN],
           ].map(([l, v, c]) => (
             <div key={l} style={{ display: "flex", justifyContent: "space-between", padding: "6px 0", borderBottom: `1px solid ${BORDER}` }}>
-              <span style={{ fontFamily: M, fontSize: 11, color: DIM }}>{l}</span>
-              <span style={{ fontFamily: M, fontSize: 11, color: c }}>{v}</span>
+              <span style={{ fontFamily: M, fontSize: 13, color: DIM }}>{l}</span>
+              <span style={{ fontFamily: M, fontSize: 13, color: c }}>{v}</span>
             </div>
           ))}
         </div>
 
         <div style={{ background: SURFACE, border: `1px solid rgba(239,68,68,0.2)`, borderRadius: 4, padding: "16px 20px" }}>
-          <div style={{ fontFamily: M, fontSize: 10, color: GOLD, letterSpacing: 1, marginBottom: 12 }}>W-AWARE GDSS SCREEN</div>
+          <div style={{ fontFamily: M, fontSize: 12, color: GOLD, letterSpacing: 1, marginBottom: 12 }}>W-AWARE GDSS SCREEN</div>
           {[
             ["Party A payoff", "847 utils ✓", GREEN],
             ["Party B payoff", "823 utils ✓", GREEN],
@@ -678,15 +678,15 @@ function Chapter6() {
             ["RECOMMENDATION", "DO NOT ACCEPT ✗", RED],
           ].map(([l, v, c]) => (
             <div key={l} style={{ display: "flex", justifyContent: "space-between", padding: "6px 0", borderBottom: `1px solid ${BORDER}` }}>
-              <span style={{ fontFamily: M, fontSize: 11, color: DIM }}>{l}</span>
-              <span style={{ fontFamily: M, fontSize: 11, color: c }}>{v}</span>
+              <span style={{ fontFamily: M, fontSize: 13, color: DIM }}>{l}</span>
+              <span style={{ fontFamily: M, fontSize: 13, color: c }}>{v}</span>
             </div>
           ))}
         </div>
       </div>
 
       {/* THREE REQUIREMENTS */}
-      <div style={{ fontFamily: M, fontSize: 10, color: GOLD, letterSpacing: 1, margin: "24px 0 12px" }}>THE THREE REQUIREMENTS</div>
+      <div style={{ fontFamily: M, fontSize: 12, color: GOLD, letterSpacing: 1, margin: "24px 0 12px" }}>THE THREE REQUIREMENTS</div>
 
       {[
         { id: "R1", title: "INDEPENDENT W-MONITORING CHANNEL", body: "The platform must accept a W-signal from a source external to the negotiating parties. Not derived from their payoffs — independent of them. For financial benchmarks: independent rate submissions. For environmental commons: third-party environmental monitoring. For labor markets: independent workforce welfare metrics." },
@@ -698,11 +698,11 @@ function Chapter6() {
           marginBottom: 8, cursor: "pointer",
         }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <div style={{ fontFamily: M, fontSize: 12, color: GOLD }}><span style={{ color: MUTED }}>{r.id} —</span> {r.title}</div>
-            <span style={{ fontFamily: M, fontSize: 10, color: MUTED }}>{reqExpanded === i ? "−" : "+"}</span>
+            <div style={{ fontFamily: M, fontSize: 14, color: GOLD }}><span style={{ color: MUTED }}>{r.id} —</span> {r.title}</div>
+            <span style={{ fontFamily: M, fontSize: 12, color: MUTED }}>{reqExpanded === i ? "−" : "+"}</span>
           </div>
           {reqExpanded === i && (
-            <div style={{ fontFamily: S, fontSize: 13, color: DIM, marginTop: 12, lineHeight: 1.7 }}>{r.body}</div>
+            <div style={{ fontFamily: S, fontSize: 15, color: DIM, marginTop: 12, lineHeight: 1.7 }}>{r.body}</div>
           )}
         </div>
       ))}
@@ -769,7 +769,7 @@ function Chapter7() {
           }} />
         ))}
       </div>
-      <div style={{ fontFamily: M, fontSize: 10, letterSpacing: 2, color: cStep < 5 ? GOLD : GREEN, marginBottom: 16 }}>
+      <div style={{ fontFamily: M, fontSize: 12, letterSpacing: 2, color: cStep < 5 ? GOLD : GREEN, marginBottom: 16 }}>
         {cStep < 5 ? "DIAGNOSTIC PHASE" : "RESOLUTION PHASE"} — STEP {cStep + 1} OF 8
       </div>
 
@@ -779,33 +779,33 @@ function Chapter7() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
             <Card>
               <Label>PROTOCOL — STEP {s.step}</Label>
-              <div style={{ fontFamily: M, fontSize: 13, fontWeight: 600, color: TEXT, marginBottom: 8 }}>{s.title}</div>
-              <div style={{ fontFamily: S, fontSize: 14, color: DIM, lineHeight: 1.7 }}>{s.desc}</div>
+              <div style={{ fontFamily: M, fontSize: 15, fontWeight: 600, color: TEXT, marginBottom: 8 }}>{s.title}</div>
+              <div style={{ fontFamily: S, fontSize: 16, color: DIM, lineHeight: 1.7 }}>{s.desc}</div>
             </Card>
             <Card border="rgba(245,158,11,0.15)" bg="rgba(245,158,11,0.04)">
               <Label>LIBOR — WORKED EXAMPLE</Label>
-              <div style={{ fontFamily: S, fontSize: 13, color: DIM, lineHeight: 1.7, marginBottom: s.why ? 8 : 0 }}>{s.libor}</div>
-              {s.why && <div style={{ fontFamily: S, fontSize: 12, color: GOLD, fontStyle: "italic", lineHeight: 1.6 }}>{s.why}</div>}
+              <div style={{ fontFamily: S, fontSize: 15, color: DIM, lineHeight: 1.7, marginBottom: s.why ? 8 : 0 }}>{s.libor}</div>
+              {s.why && <div style={{ fontFamily: S, fontSize: 14, color: GOLD, fontStyle: "italic", lineHeight: 1.6 }}>{s.why}</div>}
             </Card>
           </div>
         );
       })()}
 
       <div style={{ display: "flex", justifyContent: "space-between", margin: "16px 0 32px" }}>
-        <button onClick={() => setCStep(Math.max(0, cStep - 1))} disabled={cStep === 0} style={{ fontFamily: M, fontSize: 11, padding: "8px 20px", background: cStep === 0 ? "transparent" : "rgba(245,158,11,0.1)", border: `1px solid ${BORDER}`, color: cStep === 0 ? MUTED : GOLD, borderRadius: 4, cursor: cStep === 0 ? "default" : "pointer" }}>← BACK</button>
-        <button onClick={() => setCStep(Math.min(7, cStep + 1))} disabled={cStep === 7} style={{ fontFamily: M, fontSize: 11, padding: "8px 20px", background: cStep === 7 ? "transparent" : "rgba(245,158,11,0.1)", border: `1px solid ${BORDER}`, color: cStep === 7 ? MUTED : GOLD, borderRadius: 4, cursor: cStep === 7 ? "default" : "pointer" }}>NEXT →</button>
+        <button onClick={() => setCStep(Math.max(0, cStep - 1))} disabled={cStep === 0} style={{ fontFamily: M, fontSize: 13, padding: "8px 20px", background: cStep === 0 ? "transparent" : "rgba(245,158,11,0.1)", border: `1px solid ${BORDER}`, color: cStep === 0 ? MUTED : GOLD, borderRadius: 4, cursor: cStep === 0 ? "default" : "pointer" }}>← BACK</button>
+        <button onClick={() => setCStep(Math.min(7, cStep + 1))} disabled={cStep === 7} style={{ fontFamily: M, fontSize: 13, padding: "8px 20px", background: cStep === 7 ? "transparent" : "rgba(245,158,11,0.1)", border: `1px solid ${BORDER}`, color: cStep === 7 ? MUTED : GOLD, borderRadius: 4, cursor: cStep === 7 ? "default" : "pointer" }}>NEXT →</button>
       </div>
 
       {/* FOUR LEVELS OF ACTORS */}
-      <div style={{ fontFamily: M, fontSize: 10, color: GOLD, letterSpacing: 1, margin: "32px 0 12px" }}>THE FOUR LEVELS OF ACTORS</div>
+      <div style={{ fontFamily: M, fontSize: 12, color: GOLD, letterSpacing: 1, margin: "32px 0 12px" }}>THE FOUR LEVELS OF ACTORS</div>
 
       {/* LEVEL 1 — THE INSIDER */}
       <Card border="rgba(245,158,11,0.2)" bg="rgba(245,158,11,0.04)">
-        <div style={{ fontFamily: M, fontSize: 12, color: GOLD, fontWeight: 600, marginBottom: 8 }}>LEVEL 1 — THE INSIDER</div>
-        <div style={{ fontFamily: S, fontSize: 13, color: DIM, lineHeight: 1.7, marginBottom: 12 }}>
+        <div style={{ fontFamily: M, fontSize: 14, color: GOLD, fontWeight: 600, marginBottom: 8 }}>LEVEL 1 — THE INSIDER</div>
+        <div style={{ fontFamily: S, fontSize: 15, color: DIM, lineHeight: 1.7, marginBottom: 12 }}>
           You work at a company, a bank, a firm, a government agency. You have seen the <Tip term="Hollow Win">Hollow Win</Tip> from the inside. You know what is happening.
         </div>
-        <div style={{ fontFamily: M, fontSize: 11, color: TEXT, lineHeight: 2 }}>
+        <div style={{ fontFamily: M, fontSize: 13, color: TEXT, lineHeight: 2 }}>
           1. Document everything. Time-stamped. Contemporaneous.<br/>
           2. Consult a whistleblower attorney before doing anything else.<br/>
           3. File a claim under the applicable federal program.
@@ -817,54 +817,54 @@ function Chapter7() {
         <div style={{ fontFamily: S, fontSize: 20, color: RED, lineHeight: 1.5, fontWeight: 600, marginBottom: 16 }}>
           THE LIBOR TRADERS LEFT BETWEEN $900 MILLION AND $2.7 BILLION ON THE TABLE.
         </div>
-        <div style={{ fontFamily: S, fontSize: 14, color: DIM, lineHeight: 1.7, marginBottom: 16 }}>
+        <div style={{ fontFamily: S, fontSize: 16, color: DIM, lineHeight: 1.7, marginBottom: 16 }}>
           The LIBOR manipulation generated approximately $9 billion in regulatory sanctions. Under the Dodd-Frank whistleblower program (SEC §21F), a qualifying whistleblower receives 10–30% of sanctions over $1 million.
         </div>
         <div style={{ display: "flex", justifyContent: "center", gap: 32 }}>
           <div>
             <div style={{ fontFamily: M, fontSize: 36, color: GOLD, fontWeight: 600 }}>$900M</div>
-            <div style={{ fontFamily: M, fontSize: 11, color: MUTED }}>10% of $9B</div>
+            <div style={{ fontFamily: M, fontSize: 13, color: MUTED }}>10% of $9B</div>
           </div>
           <div style={{ fontFamily: M, fontSize: 36, color: MUTED, alignSelf: "center" }}>to</div>
           <div>
             <div style={{ fontFamily: M, fontSize: 36, color: GOLD, fontWeight: 600 }}>$2.7B</div>
-            <div style={{ fontFamily: M, fontSize: 11, color: MUTED }}>30% of $9B</div>
+            <div style={{ fontFamily: M, fontSize: 13, color: MUTED }}>30% of $9B</div>
           </div>
         </div>
-        <div style={{ fontFamily: S, fontSize: 13, color: DIM, lineHeight: 1.7, marginTop: 16 }}>
+        <div style={{ fontFamily: S, fontSize: 15, color: DIM, lineHeight: 1.7, marginTop: 16 }}>
           One person. One claim. Filed before the investigation concluded.
         </div>
-        <div style={{ fontFamily: S, fontSize: 13, color: RED, lineHeight: 1.7, marginTop: 8 }}>
+        <div style={{ fontFamily: S, fontSize: 15, color: RED, lineHeight: 1.7, marginTop: 8 }}>
           The traders who manipulated LIBOR went to prison. The traders who reported it — had any of them chosen to — would have received between nine hundred million and two point seven billion dollars from the United States government, legal immunity, and protected employment status. They did not know this option existed.
         </div>
       </div>
 
       {/* OBJECTION CARD */}
       <div style={{ padding: "24px", background: "rgba(239,68,68,0.04)", border: `2px solid rgba(239,68,68,0.2)`, borderRadius: 4, margin: "24px 0" }}>
-        <div style={{ fontFamily: M, fontSize: 13, fontWeight: 700, color: RED, letterSpacing: 1, marginBottom: 12 }}>
+        <div style={{ fontFamily: M, fontSize: 15, fontWeight: 700, color: RED, letterSpacing: 1, marginBottom: 12 }}>
           'I AM ALREADY INSIDE THE FRAUD. IT IS TOO LATE.'
         </div>
-        <div style={{ fontFamily: S, fontSize: 14, color: DIM, lineHeight: 1.8 }}>
+        <div style={{ fontFamily: S, fontSize: 16, color: DIM, lineHeight: 1.8 }}>
           This is the most common reason people inside a Hollow Win do not come forward. It is factually wrong. The most important whistleblower case in US history was brought by a man who was not a bystander. He was a participant.
         </div>
       </div>
 
       {/* THE BIRKENFELD CASE */}
       <div style={{ padding: "28px", background: SURFACE, border: `2px solid rgba(245,158,11,0.3)`, borderRadius: 4, margin: "24px 0" }}>
-        <div style={{ fontFamily: M, fontSize: 10, color: GOLD, letterSpacing: 2, marginBottom: 16 }}>THE BIRKENFELD CASE</div>
+        <div style={{ fontFamily: M, fontSize: 12, color: GOLD, letterSpacing: 2, marginBottom: 16 }}>THE BIRKENFELD CASE</div>
 
-        <div style={{ fontFamily: M, fontSize: 14, fontWeight: 600, color: TEXT, marginBottom: 4 }}>Bradley Birkenfeld</div>
-        <div style={{ fontFamily: S, fontSize: 14, color: DIM, lineHeight: 1.8, marginBottom: 20 }}>
+        <div style={{ fontFamily: M, fontSize: 16, fontWeight: 600, color: TEXT, marginBottom: 4 }}>Bradley Birkenfeld</div>
+        <div style={{ fontFamily: S, fontSize: 16, color: DIM, lineHeight: 1.8, marginBottom: 20 }}>
           UBS private banker. He personally helped wealthy American clients hide assets in secret Swiss accounts. He was not an observer. He was inside the fraud.
         </div>
 
         <Label>WHAT HE DID</Label>
-        <div style={{ fontFamily: S, fontSize: 14, color: DIM, lineHeight: 1.8, marginBottom: 20 }}>
+        <div style={{ fontFamily: S, fontSize: 16, color: DIM, lineHeight: 1.8, marginBottom: 20 }}>
           In 2007, after UBS failed to address the illegal activity internally, he brought comprehensive documentation to the DOJ, IRS, and Senate Permanent Subcommittee on Investigations.
         </div>
 
         <Label>WHAT HAPPENED TO HIM</Label>
-        <div style={{ fontFamily: M, fontSize: 12, color: DIM, lineHeight: 2.2, marginBottom: 20 }}>
+        <div style={{ fontFamily: M, fontSize: 14, color: DIM, lineHeight: 2.2, marginBottom: 20 }}>
           Pleaded guilty to conspiracy to defraud the United States<br/>
           Sentenced to 40 months in prison<br/>
           Served <span style={{ color: GOLD, fontWeight: 600 }}>31 months</span> at Schuylkill County Federal Correctional Institution<br/>
@@ -873,44 +873,44 @@ function Chapter7() {
 
         <Label>WHAT HAPPENED FIVE WEEKS AFTER HIS RELEASE</Label>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", margin: "16px 0 24px", padding: "20px", background: "rgba(245,158,11,0.06)", borderRadius: 4 }}>
-          <div style={{ fontFamily: M, fontSize: 11, color: MUTED, marginBottom: 8 }}>IRS §7623 WHISTLEBLOWER AWARD</div>
+          <div style={{ fontFamily: M, fontSize: 13, color: MUTED, marginBottom: 8 }}>IRS §7623 WHISTLEBLOWER AWARD</div>
           <div style={{ fontFamily: M, fontSize: 42, color: GOLD, fontWeight: 700 }}>$104,000,000</div>
           <div style={{ height: 1, background: BORDER, width: "60%", margin: "16px 0" }} />
           <div style={{ fontFamily: M, fontSize: 48, color: GOLD, fontWeight: 700 }}>$115,556</div>
-          <div style={{ fontFamily: M, fontSize: 12, color: MUTED, marginTop: 4 }}>FOR EVERY SINGLE DAY HE SPENT IN PRISON</div>
+          <div style={{ fontFamily: M, fontSize: 14, color: MUTED, marginTop: 4 }}>FOR EVERY SINGLE DAY HE SPENT IN PRISON</div>
         </div>
 
         <Label>WHAT HIS DISCLOSURES TRIGGERED</Label>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, margin: "12px 0 20px" }}>
           <div style={{ textAlign: "center", padding: "12px", background: "rgba(245,158,11,0.04)", borderRadius: 4 }}>
             <div style={{ fontFamily: M, fontSize: 24, color: GOLD, fontWeight: 600 }}>$780M</div>
-            <div style={{ fontFamily: M, fontSize: 10, color: MUTED }}>UBS FINE</div>
+            <div style={{ fontFamily: M, fontSize: 12, color: MUTED }}>UBS FINE</div>
           </div>
           <div style={{ textAlign: "center", padding: "12px", background: "rgba(245,158,11,0.04)", borderRadius: 4 }}>
             <div style={{ fontFamily: M, fontSize: 24, color: GOLD, fontWeight: 600 }}>120+</div>
-            <div style={{ fontFamily: M, fontSize: 10, color: MUTED }}>CRIMINAL INDICTMENTS</div>
+            <div style={{ fontFamily: M, fontSize: 12, color: MUTED }}>CRIMINAL INDICTMENTS</div>
           </div>
           <div style={{ textAlign: "center", padding: "12px", background: "rgba(245,158,11,0.04)", borderRadius: 4 }}>
             <div style={{ fontFamily: M, fontSize: 24, color: GOLD, fontWeight: 600 }}>56,000+</div>
-            <div style={{ fontFamily: M, fontSize: 10, color: MUTED }}>DELINQUENT TAXPAYERS CAME FORWARD</div>
+            <div style={{ fontFamily: M, fontSize: 12, color: MUTED }}>DELINQUENT TAXPAYERS CAME FORWARD</div>
           </div>
           <div style={{ textAlign: "center", padding: "12px", background: "rgba(245,158,11,0.04)", borderRadius: 4 }}>
             <div style={{ fontFamily: M, fontSize: 24, color: GOLD, fontWeight: 600 }}>$11B+</div>
-            <div style={{ fontFamily: M, fontSize: 10, color: MUTED }}>US TAX COLLECTIONS FROM HIS DISCLOSURE</div>
+            <div style={{ fontFamily: M, fontSize: 12, color: MUTED }}>US TAX COLLECTIONS FROM HIS DISCLOSURE</div>
           </div>
         </div>
 
         <Label>THE LEGAL PRECEDENT</Label>
-        <div style={{ fontFamily: S, fontSize: 14, color: DIM, lineHeight: 1.8, marginBottom: 20 }}>
+        <div style={{ fontFamily: S, fontSize: 16, color: DIM, lineHeight: 1.8, marginBottom: 20 }}>
           Participants in a fraud — not just observers — are eligible for IRS whistleblower awards. The IRS did not reduce his award for his participation in the wrongdoing. The government stated explicitly: they needed a knowledgeable insider. Only insiders have the information that matters.
         </div>
 
         <div style={{ padding: "20px", background: "rgba(239,68,68,0.04)", border: `1px solid rgba(239,68,68,0.15)`, borderRadius: 4 }}>
           <Label>THE INJUSTICE THAT MAKES IT REAL</Label>
-          <div style={{ fontFamily: S, fontSize: 15, color: TEXT, lineHeight: 1.9, marginTop: 8 }}>
+          <div style={{ fontFamily: S, fontSize: 17, color: TEXT, lineHeight: 1.9, marginTop: 8 }}>
             Of all UBS executives implicated or indicted — including Birkenfeld's direct superiors — he was the only one who served prison time. The people above him paid fines and walked. He blew the whistle and went to prison. Then received $104 million.
           </div>
-          <div style={{ fontFamily: S, fontSize: 15, color: GOLD, lineHeight: 1.9, marginTop: 12, fontWeight: 600 }}>
+          <div style={{ fontFamily: S, fontSize: 17, color: GOLD, lineHeight: 1.9, marginTop: 12, fontWeight: 600 }}>
             The system is imperfect. The math still works.
           </div>
         </div>
@@ -918,20 +918,20 @@ function Chapter7() {
 
       {/* IMPORTANT DISTINCTIONS */}
       <div style={{ padding: "16px 20px", background: SURFACE, border: `1px solid ${BORDER}`, borderRadius: 4, margin: "0 0 24px" }}>
-        <div style={{ fontFamily: M, fontSize: 10, color: MUTED, letterSpacing: 1, marginBottom: 8 }}>IMPORTANT DISTINCTION</div>
-        <div style={{ fontFamily: S, fontSize: 13, color: DIM, lineHeight: 1.8 }}>
+        <div style={{ fontFamily: M, fontSize: 12, color: MUTED, letterSpacing: 1, marginBottom: 8 }}>IMPORTANT DISTINCTION</div>
+        <div style={{ fontFamily: S, fontSize: 15, color: DIM, lineHeight: 1.8 }}>
           Birkenfeld used the IRS §7623 program (tax fraud). LIBOR traders would use SEC §21F or CFTC §748 (financial benchmark manipulation). Different programs. Same architecture: 10–30% of sanctions, participants eligible, no maximum award. The Birkenfeld case is the proof of concept.
         </div>
       </div>
 
       {/* FOUR FEDERAL PROGRAMS */}
-      <div style={{ fontFamily: M, fontSize: 10, color: GOLD, letterSpacing: 1, margin: "24px 0 12px" }}>THE FOUR FEDERAL PROGRAMS</div>
+      <div style={{ fontFamily: M, fontSize: 12, color: GOLD, letterSpacing: 1, margin: "24px 0 12px" }}>THE FOUR FEDERAL PROGRAMS</div>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
         {WHISTLE.map(w => (
           <div key={w.prog} style={{ padding: "16px 20px", background: SURFACE, border: `1px solid rgba(245,158,11,0.2)`, borderRadius: 4 }}>
-            <div style={{ fontFamily: M, fontSize: 11, fontWeight: 600, color: GOLD, marginBottom: 2 }}>{w.prog}</div>
-            <div style={{ fontFamily: M, fontSize: 10, color: MUTED, marginBottom: 8 }}>{w.statute}</div>
-            <div style={{ fontFamily: M, fontSize: 10, color: DIM, lineHeight: 1.8 }}>
+            <div style={{ fontFamily: M, fontSize: 13, fontWeight: 600, color: GOLD, marginBottom: 2 }}>{w.prog}</div>
+            <div style={{ fontFamily: M, fontSize: 12, color: MUTED, marginBottom: 8 }}>{w.statute}</div>
+            <div style={{ fontFamily: M, fontSize: 12, color: DIM, lineHeight: 1.8 }}>
               Covers: {w.covers}<br/>
               Reward: {w.reward}<br/>
               Anonymity: {w.anon}<br/>
@@ -950,20 +950,20 @@ function Chapter7() {
 
       {/* LEVELS 2–4 */}
       <Card>
-        <div style={{ fontFamily: M, fontSize: 12, color: GOLD, fontWeight: 600, marginBottom: 8 }}>LEVEL 2 — THE EXECUTIVE OR BOARD MEMBER</div>
-        <div style={{ fontFamily: S, fontSize: 13, color: DIM, lineHeight: 1.7 }}>
+        <div style={{ fontFamily: M, fontSize: 14, color: GOLD, fontWeight: 600, marginBottom: 8 }}>LEVEL 2 — THE EXECUTIVE OR BOARD MEMBER</div>
+        <div style={{ fontFamily: S, fontSize: 15, color: DIM, lineHeight: 1.7 }}>
           You have authority over the game design. Restructure compensation to align with system welfare. Commission an independent <Tip term="W">W</Tip>-audit of major revenue streams. Implement the three <Tip term="GDSS">GDSS</Tip> requirements (R1, R2, R3). The question: "Which of our revenue streams has the highest <Tip term="β_W">β_W</Tip>? What are we building on?"
         </div>
       </Card>
       <Card>
-        <div style={{ fontFamily: M, fontSize: 12, color: GOLD, fontWeight: 600, marginBottom: 8 }}>LEVEL 3 — THE REGULATOR OR INDUSTRY BODY</div>
-        <div style={{ fontFamily: S, fontSize: 13, color: DIM, lineHeight: 1.7 }}>
+        <div style={{ fontFamily: M, fontSize: 14, color: GOLD, fontWeight: 600, marginBottom: 8 }}>LEVEL 3 — THE REGULATOR OR INDUSTRY BODY</div>
+        <div style={{ fontFamily: S, fontSize: 15, color: DIM, lineHeight: 1.7 }}>
           Mandate W-monitoring as a condition of market participation. Require decomposed payoff reporting. Design structural separation to break <Tip term="PST">PST</Tip>. The question: "Which sectors in our jurisdiction have β_W {">"} 2.0? What is our <Tip term="T*">T*</Tip> for each?"
         </div>
       </Card>
       <Card>
-        <div style={{ fontFamily: M, fontSize: 12, color: GOLD, fontWeight: 600, marginBottom: 8 }}>LEVEL 4 — THE SOVEREIGN OR INTERNATIONAL BODY</div>
-        <div style={{ fontFamily: S, fontSize: 13, color: DIM, lineHeight: 1.7 }}>
+        <div style={{ fontFamily: M, fontSize: 14, color: GOLD, fontWeight: 600, marginBottom: 8 }}>LEVEL 4 — THE SOVEREIGN OR INTERNATIONAL BODY</div>
+        <div style={{ fontFamily: S, fontSize: 15, color: DIM, lineHeight: 1.7 }}>
           Treaty-based commons governance (the Montreal Protocol model). International benchmark reform (FSB post-LIBOR). Mandate <Tip term="c-adjusted GDP">c-adjusted GDP</Tip> as a supplementary national account. The question: "Which of our PST domains have T* under 10 years?"
         </div>
       </Card>
@@ -1031,7 +1031,7 @@ function Chapter8() {
 
       {DOMAINS.map((g, gi) => (
         <div key={g.group} style={{ marginTop: 32 }}>
-          <div style={{ fontFamily: M, fontSize: 10, color: GOLD, letterSpacing: 2, marginBottom: 12 }}>
+          <div style={{ fontFamily: M, fontSize: 12, color: GOLD, letterSpacing: 2, marginBottom: 12 }}>
             GROUP {gi + 1} — {g.group}
           </div>
           {g.domains.map((d, di) => {
@@ -1043,30 +1043,30 @@ function Chapter8() {
                 marginBottom: 8, cursor: "pointer",
               }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <div style={{ fontFamily: M, fontSize: 12, fontWeight: 600, color: TEXT }}>{d.name}</div>
+                  <div style={{ fontFamily: M, fontSize: 14, fontWeight: 600, color: TEXT }}>{d.name}</div>
                   <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                    {d.beta && <span style={{ fontFamily: M, fontSize: 11, color: GOLD }}>β_W: {d.beta}</span>}
-                    <span style={{ fontFamily: M, fontSize: 10, color: MUTED }}>{isExpanded ? "−" : "+"}</span>
+                    {d.beta && <span style={{ fontFamily: M, fontSize: 13, color: GOLD }}>β_W: {d.beta}</span>}
+                    <span style={{ fontFamily: M, fontSize: 12, color: MUTED }}>{isExpanded ? "−" : "+"}</span>
                   </div>
                 </div>
                 {/* ALWAYS show plain English */}
-                <div style={{ fontFamily: S, fontSize: 14, color: DIM, lineHeight: 1.7, marginTop: 8 }}>{d.plain}</div>
+                <div style={{ fontFamily: S, fontSize: 16, color: DIM, lineHeight: 1.7, marginTop: 8 }}>{d.plain}</div>
 
                 {isExpanded && (
                   <div style={{ marginTop: 12, paddingTop: 12, borderTop: `1px solid ${BORDER}` }}>
                     {d.theorem && (
                       <div style={{ marginBottom: 10 }}>
                         <Label>THE THEOREM</Label>
-                        <div style={{ fontFamily: M, fontSize: 11, color: TEXT, lineHeight: 1.7 }}>{d.theorem}</div>
+                        <div style={{ fontFamily: M, fontSize: 13, color: TEXT, lineHeight: 1.7 }}>{d.theorem}</div>
                       </div>
                     )}
                     {d.callout && (
                       <div style={{ padding: "10px 14px", background: "rgba(245,158,11,0.06)", border: `1px solid rgba(245,158,11,0.15)`, borderRadius: 4, marginBottom: 10 }}>
-                        <div style={{ fontFamily: S, fontSize: 12, color: GOLD, fontStyle: "italic" }}>{d.callout}</div>
+                        <div style={{ fontFamily: S, fontSize: 14, color: GOLD, fontStyle: "italic" }}>{d.callout}</div>
                       </div>
                     )}
                     <Label>EXPIRY CONDITION</Label>
-                    <div style={{ fontFamily: M, fontSize: 11, color: RED }}>{d.expiry}</div>
+                    <div style={{ fontFamily: M, fontSize: 13, color: RED }}>{d.expiry}</div>
                   </div>
                 )}
               </div>
@@ -1077,13 +1077,13 @@ function Chapter8() {
 
       {/* THE STRUCTURAL BREAK */}
       <div style={{ padding: "24px", background: "rgba(245,158,11,0.06)", border: `2px solid rgba(245,158,11,0.2)`, borderRadius: 4, margin: "40px 0" }}>
-        <div style={{ fontFamily: S, fontSize: 15, color: GOLD, lineHeight: 1.8 }}>
+        <div style={{ fontFamily: S, fontSize: 17, color: GOLD, lineHeight: 1.8 }}>
           The 15 theorems in the existing economics canon are built on value judgments. Kenneth Arrow said so himself — he characterized his axioms as "value judgments that express the doctrines of citizens' sovereignty and rationality in a very general form." The Stanford Encyclopedia of Philosophy confirms: they are "not supposed to express more or less indubitable truths."
         </div>
-        <div style={{ fontFamily: S, fontSize: 15, color: GOLD, lineHeight: 1.8, marginTop: 12 }}>
+        <div style={{ fontFamily: S, fontSize: 17, color: GOLD, lineHeight: 1.8, marginTop: 12 }}>
           The profession accepted those theorems. It gave out Nobel Prizes for them.
         </div>
-        <div style={{ fontFamily: S, fontSize: 15, color: GOLD, lineHeight: 1.8, marginTop: 12 }}>
+        <div style={{ fontFamily: S, fontSize: 17, color: GOLD, lineHeight: 1.8, marginTop: 12 }}>
           The 16 proposed domain theorems are built on physical constants. Conservation of mass. Radioactive decay rates. The C-F bond energy. The geochemical rate of nodule formation. These are not value judgments. They are measured facts confirmed by independent experimental replication across centuries.
         </div>
         <div style={{ fontFamily: S, fontSize: 18, color: GOLD, lineHeight: 1.8, marginTop: 16, fontWeight: 600, textAlign: "center" }}>
@@ -1126,21 +1126,21 @@ export default function Curriculum({ onDeepDive }) {
         borderRight: `1px solid ${BORDER}`, padding: "24px 16px", flexShrink: 0,
         display: "flex", flexDirection: "column", gap: 2,
       }}>
-        <div style={{ fontFamily: M, fontSize: 10, color: GOLD, letterSpacing: 2, marginBottom: 16 }}>CURRICULUM</div>
+        <div style={{ fontFamily: M, fontSize: 12, color: GOLD, letterSpacing: 2, marginBottom: 16 }}>CURRICULUM</div>
         {CHAPTERS.map(ch => (
           <a key={ch.id} href={`#ch${ch.id}`} onClick={(e) => { e.preventDefault(); document.getElementById(`ch${ch.id}`)?.scrollIntoView({ behavior: "smooth" }); }} style={{
             display: "block", padding: "8px 10px", borderRadius: 4, textDecoration: "none",
             background: activeChapter === ch.id ? "rgba(245,158,11,0.08)" : "transparent",
             borderLeft: activeChapter === ch.id ? `3px solid ${GOLD}` : "3px solid transparent",
           }}>
-            <div style={{ fontFamily: M, fontSize: 10, color: activeChapter === ch.id ? GOLD : MUTED }}>{ch.id}. {ch.title}</div>
-            <div style={{ fontFamily: M, fontSize: 9, color: MUTED, marginTop: 2 }}>{ch.time}</div>
+            <div style={{ fontFamily: M, fontSize: 12, color: activeChapter === ch.id ? GOLD : MUTED }}>{ch.id}. {ch.title}</div>
+            <div style={{ fontFamily: M, fontSize: 11, color: MUTED, marginTop: 2 }}>{ch.time}</div>
           </a>
         ))}
         <div style={{ marginTop: "auto", paddingTop: 16 }}>
-          <div style={{ fontFamily: M, fontSize: 9, color: MUTED, marginBottom: 4 }}>TOTAL: ~25 MIN</div>
+          <div style={{ fontFamily: M, fontSize: 11, color: MUTED, marginBottom: 4 }}>TOTAL: ~25 MIN</div>
           {onDeepDive && (
-            <button onClick={onDeepDive} style={{ fontFamily: M, fontSize: 10, color: GOLD, background: "rgba(245,158,11,0.08)", border: `1px solid rgba(245,158,11,0.15)`, padding: "8px 12px", borderRadius: 4, cursor: "pointer", width: "100%", textAlign: "left" }}>
+            <button onClick={onDeepDive} style={{ fontFamily: M, fontSize: 12, color: GOLD, background: "rgba(245,158,11,0.08)", border: `1px solid rgba(245,158,11,0.15)`, padding: "8px 12px", borderRadius: 4, cursor: "pointer", width: "100%", textAlign: "left" }}>
               DEEP DIVE →
             </button>
           )}
@@ -1167,10 +1167,10 @@ export default function Curriculum({ onDeepDive }) {
 
         {/* DEEP DIVE DIVIDER */}
         <div style={{ borderTop: `2px solid ${GOLD}`, margin: "64px 0 32px", paddingTop: 24, textAlign: "center" }}>
-          <div style={{ fontFamily: M, fontSize: 10, color: GOLD, letterSpacing: 3 }}>DEEP DIVE — FOR RESEARCHERS AND PRACTITIONERS</div>
-          <div style={{ fontFamily: S, fontSize: 13, color: MUTED, marginTop: 8 }}>Interactive timeline, domain theorems, β_W rankings, T* explorer, case comparison, Conflictoring walkthrough</div>
+          <div style={{ fontFamily: M, fontSize: 12, color: GOLD, letterSpacing: 3 }}>DEEP DIVE — FOR RESEARCHERS AND PRACTITIONERS</div>
+          <div style={{ fontFamily: S, fontSize: 15, color: MUTED, marginTop: 8 }}>Interactive timeline, domain theorems, β_W rankings, T* explorer, case comparison, Conflictoring walkthrough</div>
           {onDeepDive && (
-            <button onClick={onDeepDive} style={{ fontFamily: M, fontSize: 11, padding: "10px 24px", marginTop: 16, background: "rgba(245,158,11,0.1)", border: `1px solid rgba(245,158,11,0.3)`, color: GOLD, borderRadius: 4, cursor: "pointer" }}>
+            <button onClick={onDeepDive} style={{ fontFamily: M, fontSize: 13, padding: "10px 24px", marginTop: 16, background: "rgba(245,158,11,0.1)", border: `1px solid rgba(245,158,11,0.3)`, color: GOLD, borderRadius: 4, cursor: "pointer" }}>
               ENTER DEEP DIVE →
             </button>
           )}
